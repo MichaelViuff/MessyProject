@@ -10,18 +10,14 @@ public class User
     this.name = name;
   }
 
-  public void setC_nam(String n)
+  public void setName(String name)
   {
-    if (n.length() < 0)
-    {
-      return; //If string is invalid, we dont try to store it
-    }
-    name = n;
+    this.name=name;
   }
 
-  public void setA(String a)
+  public void setId(int id)
   {
-    a = a;
+    this.id=id;
   }
 
   public int geti()
