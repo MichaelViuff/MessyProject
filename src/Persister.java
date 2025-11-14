@@ -8,9 +8,9 @@ public class Persister
 
     try (BufferedWriter bw = new BufferedWriter(new FileWriter(file))) {
       for (int x = 0; x < userList.size(); x++) {
-        bw.write(userList.get(x).name);
-        bw.newLine(); // Optional: separate entries
-        bw.write(userList.get(x).getID());
+        bw.write("ID: " + userList.get(x).getID());
+        bw.newLine();
+        bw.write("Name: " + userList.get(x).name);
         bw.newLine();
       }
     } catch (IOException e) {

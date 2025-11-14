@@ -1,41 +1,29 @@
 public class User
 {
-    public static int ID;
-    public String name;
-    public String address;
+  public static int ID;
+  public String name;
 
-    public User(int id, String name){
-        ID = id;
-        if(name.isEmpty() || name.length() > 100) // Testing length
-        {
-            return; //If string is invalid, we dont try to store it
-        }
-        this.name = name;
-    }
-
-    public void setName(String name)
+  public User(int id, String name)
+  {
+    ID = id;
+    if (name.length() > 100) // Testing length
     {
-        if(name.isEmpty())
-        {
-            return; //If string is invalid, we dont try to store it
-        }
-        this.name = name;
+      return; //If string is invalid, we don't try to store it
     }
+    this.name = name;
+  }
 
-    public void setAddress(String address)
-    {
-        this.address = address;
-    }
+  public int getID()
+  {
+    return ID;
+  }
 
-    public int getID(){ return ID; }
-
-    public String getName(){ return name; }
-
-    public String getAddress(){ return address; }
-
-  @Override public boolean equals(Object object) {
-    if (this == object) return true;
-    if (object == null || getClass() != object.getClass()) return false;
+  @Override public boolean equals(Object object)
+  {
+    if (this == object)
+      return true;
+    if (object == null || getClass() != object.getClass())
+      return false;
 
     User other = (User) object;
     return this.name != null && this.name.equals(other.name);

@@ -13,9 +13,6 @@ public class Main
         userList.add(u2);
         userList.add(u3);
 
-//      Intent unclear. Trying to getu(getUser?) but then creating a new User)
-//      System.out.println(userList.getu(new User(11,"Bob")));
-
         Persister.saveData(userList);
     }
 }
