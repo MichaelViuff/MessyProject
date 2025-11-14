@@ -4,14 +4,14 @@ public class Main
 {
     public static void main(String[] args)
     {
-        User u1 = new User(1,"Bob");
-        User u2 = new User(2,"Alice");
-        User u3 = new User(3,"Carl");
+        User bob = new User(1,"Bob");
+        User alice = new User(2,"Alice");
+        User carl = new User(3,"Carl");
 
         UserList list = new UserList();
-        list.add(u1);
-        list.add(u2);
-        list.add(u3);
+        list.addUser(bob);
+        list.addUser(alice);
+        list.addUser(carl);
 
         System.out.println(list.getUsers());
 
