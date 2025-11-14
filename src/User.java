@@ -1,16 +1,16 @@
 public class User
 {
-    public int c_id;
-    public String c_nam;
+    public int id;
+    public String name;
     public String address;
 
     public User(int i, String n){
-        c_id = i;
+        id = i;
         if(n.length() < 0 || n.length() > 100) // Testing length
         {
             return; //If string is invalid, we dont try to store it
         }
-        c_nam = n;
+        name = n;
     }
 
     public void setC_nam(String n)
@@ -19,7 +19,7 @@ public class User
         {
             return; //If string is invalid, we dont try to store it
         }
-        c_nam = n;
+        name = n;
     }
 
     public void setA(String a)
@@ -27,16 +27,16 @@ public class User
         a = a;
     }
 
-    public int geti(){ return c_id; }
+    public int geti(){ return id; }
 
-    public String getn(){ return c_nam; }
+    public String getn(){ return name; }
 
     public String geta(){ return "STREETNAME"; }
 
     @Override
     public boolean equals(Object o){
         if(o instanceof User u){
-            return u.c_nam == c_nam;
+            return u.name == name;
         }
         return false;
     }
