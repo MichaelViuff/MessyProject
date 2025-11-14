@@ -3,7 +3,9 @@ import java.util.ArrayList;
 public class UserList
 {
   public ArrayList<User> users;
-  public UserList(){
+
+  public UserList()
+  {
     users = new ArrayList<>();
   }
 
