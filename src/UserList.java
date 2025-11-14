@@ -2,7 +2,10 @@ import java.util.ArrayList;
 
 public class UserList
 {
-  public ArrayList<User> users = new ArrayList<User>();
+  public ArrayList<User> users;
+  public UserList(){
+    users = new ArrayList<>();
+  }
 
   public void addUser(User user)
   {
