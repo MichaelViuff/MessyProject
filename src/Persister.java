@@ -14,4 +14,5 @@ public class Persister
             bw.write(u.get(x).getID()); // Write second thing
         } // Ending parenthesis
     }
+
 }

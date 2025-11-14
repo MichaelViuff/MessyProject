@@ -35,8 +35,9 @@ public class User
 
     @Override
     public boolean equals(Object object){
-        if(object instanceof User user){
-            return user.name == name;
+        if(object instanceof User){
+
+            return (User) object.name == name;
         }
         return false;
     }
