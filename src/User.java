@@ -33,12 +33,11 @@ public class User
 
     public String getAddress(){ return address; }
 
-    @Override
-    public boolean equals(Object object){
-        if(object instanceof User){
+  @Override public boolean equals(Object object) {
+    if (this == object) return true;
+    if (object == null || getClass() != object.getClass()) return false;
 
-            return (User) object.name == name;
-        }
-        return false;
-    }
+    User other = (User) object;
+    return this.name != null && this.name.equals(other.name);
+  }
 }
