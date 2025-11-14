@@ -20,19 +20,19 @@ public class User
     this.id=id;
   }
 
-  public int geti()
+  public int getId()
   {
     return id;
   }
 
-  public String getn()
+  public String getName()
   {
     return name;
   }
 
-  public String geta()
+  public String getAddress()
   {
-    return "STREETNAME";
+    return address;
   }
 
   @Override public boolean equals(Object o)
