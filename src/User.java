@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class User
 {
   public int id;
@@ -37,10 +39,10 @@ public class User
 
   @Override public boolean equals(Object o)
   {
-    if (o instanceof User u)
-    {
-      return u.name == name;
-    }
-    return false;
+    if (o == null || getClass() != o.getClass())
+      return false;
+    User user = (User) o;
+    return Objects.equals(name, user.name) && Objects.equals(
+        address, user.address);
   }
 }
