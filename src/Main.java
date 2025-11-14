@@ -11,7 +11,7 @@ public class Main
         list.add(u2);
         list.add(u3);
 
-        System.out.println(list.getUsers(new User(2,"Bob" )));
+        System.out.println(list.getUsers());
 
         Persister.saveToFile(list);
     }
