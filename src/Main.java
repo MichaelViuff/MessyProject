@@ -6,13 +6,14 @@ public class Main
         User u2 = new User(20,"Alice");
         User u3 = new User(30, "Carl");
 
-        UserList list = new UserList();
-        list.addUser(u1);
-        list.addUser(u2);
-        list.addUser(u3);
+        UserList userList = new UserList();
+        userList.addUser(u1);
+        userList.addUser(u2);
+        userList.addUser(u3);
 
-        System.out.println(list.getu(new User(11,"Bob")));
+//      Intent unclear. Trying to getu(getUser?) but then creating a new User)
+//      System.out.println(userList.getu(new User(11,"Bob")));
 
-        Persister.s(list);
+        Persister.s(userList);
     }
 }
