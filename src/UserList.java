@@ -2,19 +2,19 @@ import java.util.ArrayList;
 
 public class UserList
 {
-    public ArrayList<User> u = new ArrayList<User>();
+    public ArrayList<User> users = new ArrayList<User>();
 
-    public void add(User u)
+    public void addUser(User user)
     {
-        this.u.add(u);
-        if(u == null)
-        {
-            return;
-        }
+        users.add(user);
     }
 
-    public ArrayList<User> getu()
+// Intended functionality unclear
+    public User getUserByIndex(int index)
     {
-        return u;
+      if (index < users.size()) return users.get(index);
+      else {
+        return null;
+      }
     }
 }

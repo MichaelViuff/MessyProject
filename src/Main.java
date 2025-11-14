@@ -7,9 +7,9 @@ public class Main
         User u3 = new User(30, "Carl");
 
         UserList list = new UserList();
-        list.add(u1);
-        list.add(u2);
-        list.add(u3);
+        list.addUser(u1);
+        list.addUser(u2);
+        list.addUser(u3);
 
         System.out.println(list.getu(new User(11,"Bob")));
 
