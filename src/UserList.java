@@ -16,4 +16,9 @@ public class UserList
   {
     return users;
   }
+
+  @Override public String toString()
+  {
+    return "UserList{" + "users=" + users + '}';
+  }
 }

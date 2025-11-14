@@ -45,4 +45,10 @@ public class User
     return Objects.equals(name, user.name) && Objects.equals(
         address, user.address);
   }
+
+  @Override public String toString()
+  {
+    return "User{" + "id=" + id + ", name='" + name + '\'' + ", address='"
+        + address + '\'' + '}';
+  }
 }
