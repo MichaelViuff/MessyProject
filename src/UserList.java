@@ -4,13 +4,13 @@ public class UserList
 {
     public ArrayList<User> u = new ArrayList<User>();
 
-    public void add(User u)
+    public void add(User username)
     {
-        this.u.add(u);
-        if(u == null)
+        if(username == null)
         {
             return;
         }
+        u.add(username);
     }
 
     public ArrayList<User> getu()
