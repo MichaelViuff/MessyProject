@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class User {
     private int userId;
     private String userName;
@@ -37,10 +39,17 @@ public class User {
 
     @Override
     public boolean equals(Object o) {
-        if (o instanceof User u) {
-            return u.userName == userName;
-        }
-        return false;
+        if (this == o)
+            return true;
+        if (!(o instanceof User))
+            return false;
+        User u = (User) o;
+        return this.userId == u.userId && Objects.equals(this.userName, u.userName);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(userId, userName);
     }
 
     @Override
