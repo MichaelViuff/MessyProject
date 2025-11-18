@@ -4,13 +4,12 @@ public class User
     public String c_nam;
     public String address;
 
-    public User(int i, String n){
-        c_id = i;
-        if(n.length() < 0 || n.length() > 100) // Testing length
-        {
-            return; //If string is invalid, we dont try to store it
-        }
+    public User(String n, int i){
+        if(n == null || n.length() == 0 || n.length() > 100) { // Testing length
+                return;
+            }
         c_nam = n;
+        c_id = i;
     }
 
     public void setC_nam(String n)
