@@ -1,20 +1,16 @@
 import java.util.ArrayList;
 
-public class UserList
-{
-    public ArrayList<User> u = new ArrayList<User>();
+public class UserList {
+    public ArrayList<User> user = new ArrayList<User>();
 
-    public void add(User u)
-    {
-        this.u.add(u);
-        if(u == null)
-        {
+    public void addUser(User newUser) {
+        this.user.add(newUser);
+        if (newUser == null) {
             return;
         }
     }
 
-    public ArrayList<User> getu()
-    {
-        return u;
+    public ArrayList<User> getUser() {
+        return user;
     }
 }

@@ -1,18 +1,16 @@
-public class Main
-{
-    public static void main(String[] args)
-    {
+public class Main {
+    public static void main(String[] args) {
         User u1 = new User(10, "Bob");
         User u2 = new User(20, "Alice");
         User u3 = new User(30, "Carl");
 
         UserList list = new UserList();
-        list.add(u1);
-        list.add(u2);
-        list.add(u3);
+        list.addUser(u1);
+        list.addUser(u2);
+        list.addUser(u3);
 
-        System.out.println(list.getu(new User("Bob", 11)));
+        System.out.println(list.getUser(new User("Bob", 11)));
 
-        Persister.s(list);
+        Persister.saveUsers(list);
     }
 }
