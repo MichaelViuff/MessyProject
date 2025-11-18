@@ -22,7 +22,7 @@ public class User
 
     public void setA(String a)
     {
-        a = a;
+        this.address = a;
     }
 
     public int geti(){ return c_id; }
