@@ -14,7 +14,7 @@ public class Main
     list.add(u3);
 
     System.out.println(list.getu());
-
     Persister.s(list.getu());
+
   }
 }

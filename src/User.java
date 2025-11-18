@@ -17,7 +17,6 @@ public class User
 
     this.c_id = i;
     this.c_nam = n;
-
   }
 
   public void setC_nam(String n)
@@ -60,7 +59,6 @@ public class User
 
     return c_id == u.c_id && Objects.equals(u.c_nam, c_nam) && Objects.equals(
         u.address, address);
-
   }
 
   @Override public String toString()
