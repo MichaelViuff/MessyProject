@@ -13,6 +13,7 @@ public class Persister {
         for (User user : users) {
             bw.write("Username: " + user.getUserName() + ";"); //Writes username
             bw.write("User ID: " + String.valueOf(user.getUserId())); //Writes userID
+            bw.newLine();   //Adds linebreak between users
         }
         } catch (IOException e) {
         System.out.println("Error saving users: " + e.getMessage()); //Catches exceptions and logs them
