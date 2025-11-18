@@ -25,11 +25,13 @@ public class User
         this.address = a;
     }
 
-    public int geti(){ return c_id; }
+    public String geta(){
+        return address; }
 
-    public String getn(){ return c_nam; }
+    public String getn(){
+        return c_nam; }
 
-    public String geta(){ return "STREETNAME"; }
+
 
     @Override
     public boolean equals(Object o){
