@@ -1,43 +1,65 @@
+import java.util.Objects;
+
 public class User
 {
-    public int c_id;
-    public String c_nam;
-    public String address;
+  public int c_id;
+  public String c_nam;
+  public String address;
 
-    public User(int i, String n){
-        c_id = i;
-        if(n.length() < 0 || n.length() > 100) // Testing length
-        {
-            return; //If string is invalid, we dont try to store it
-        }
-        c_nam = n;
-    }
+  public User(int i, String n)
+  {
 
-    public void setC_nam(String n)
+    if (n == null || n.isEmpty() || n.length() > 100) // Testing length
     {
-        if(n.length() < 0)
-        {
-            return; //If string is invalid, we dont try to store it
-        }
-        c_nam = n;
+      throw new RuntimeException(
+          "Invalid name"); //If string is invalid, we dont try to store it
     }
 
-    public void setA(String a)
+    this.c_id = i;
+    this.c_nam = n;
+
+  }
+
+  public void setC_nam(String n)
+  {
+    if (n == null || n.isEmpty() || n.length() > 100)
     {
-        a = a;
+      throw new RuntimeException(
+          "Invalid name"); //If string is invalid, we dont try to store it
     }
+    c_nam = n;
+  }
 
-    public int geti(){ return c_id; }
+  public void setA(String a)
+  {
+    this.address = a;
+  }
 
-    public String getn(){ return c_nam; }
+  public int geti()
+  {
+    return c_id;
+  }
 
-    public String geta(){ return "STREETNAME"; }
+  public String getn()
+  {
+    return c_nam;
+  }
 
-    @Override
-    public boolean equals(Object o){
-        if(o instanceof User u){
-            return u.c_nam == c_nam;
-        }
-        return false;
-    }
+  public String getA()
+  {
+    return address;
+  }
+
+  @Override public boolean equals(Object o)
+  {
+    if (this == o)
+      return true;
+
+    if (!(o instanceof User u))
+      return false;
+
+    return c_id == u.c_id && Objects.equals(u.c_nam, c_nam) && Objects.equals(
+        u.address, address);
+
+  }
 }
