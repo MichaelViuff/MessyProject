@@ -12,7 +12,7 @@ public class User
         c_id = i;
     }
 
-    public void setC_nam(String n)
+    public void setC_name(String n)
     {
         if(n == null || n.length() == 0) {
             return; //If string is invalid, we don't try to store it
@@ -30,6 +30,10 @@ public class User
 
     public String getn(){
         return c_nam; }
+
+    public int geti(){
+        return c_id;
+    }
 
 
 
