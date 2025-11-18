@@ -62,4 +62,10 @@ public class User
         u.address, address);
 
   }
+
+  @Override public String toString()
+  {
+    return "User{" + "c_id=" + c_id + ", c_nam='" + c_nam + '\'' + ", address='"
+        + address + '\'' + '}';
+  }
 }
