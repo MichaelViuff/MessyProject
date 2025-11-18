@@ -3,11 +3,8 @@ import java.util.ArrayList;
 public class UserList {
     public ArrayList<User> users = new ArrayList<User>();
 
-    public void addUser(User newUser) {
-        users.add(newUser);
-        if (newUser == null) {
-            return;
-        }
+    public boolean addUser(User newUser) {
+         return newUser == null ? false : users.add(newUser);
     }
 
     public ArrayList<User> getUsers() {

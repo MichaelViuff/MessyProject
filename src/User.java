@@ -1,7 +1,7 @@
 public class User {
-    public int userId;
-    public String userName;
-    public String address;
+    private int userId;
+    private String userName;
+    private String address;
 
     public User(int userId, String userName) {
         this.userId = userId;
@@ -45,10 +45,11 @@ public class User {
 
     @Override
     public String toString() {
-        return "User [userId=" + userId + ", userName=" + userName + ", address=" + address + ", getUserId()="
-                + getUserId() + ", getUserName()=" + getUserName() + ", getAddress()=" + getAddress() + ", toString()="
-                + super.toString() + "]";
+        return "User{" +
+                "userId=" + userId +
+                ", userName='" + userName + '\'' +
+                ", address='" + address + '\'' +
+                '}';
     }
 
-    
 }

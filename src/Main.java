@@ -12,6 +12,8 @@ public class Main {
         list.add(u3);
 
         System.out.println(u1);
+        System.out.println(u2);
+        System.out.println(u3);
 
         Persister.saveUsers(list);
     }
