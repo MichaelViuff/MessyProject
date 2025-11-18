@@ -8,9 +8,9 @@ public class User {
     public User(int userId, String userName) {
         this.userId = userId;
 
-      if (userName == null || userName.isEmpty() || userName.length() > 100) {
-    throw new IllegalArgumentException("Invalid username");
-}
+        if (userName == null || userName.isEmpty() || userName.length() > 100) {
+            throw new IllegalArgumentException("Invalid username");
+        }
 
         this.userName = userName;
     }

@@ -1,1 +1,3 @@
-Username: Bob;User ID: 10Username: Alice;User ID: 20Username: Carl;User ID: 30
+Username: Bob;User ID: 10
+Username: Alice;User ID: 20
+Username: Carl;User ID: 30
