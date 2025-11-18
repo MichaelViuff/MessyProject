@@ -7,10 +7,11 @@ public class User {
 
     public User(int userId, String userName) {
         this.userId = userId;
-        if (userName.length() < 0 || userName.length() > 100) // Testing length
-        {
-            return; // If string is invalid, we dont try to store it
-        }
+
+      if (userName == null || userName.isEmpty() || userName.length() > 100) {
+    throw new IllegalArgumentException("Invalid username");
+}
+
         this.userName = userName;
     }
 
