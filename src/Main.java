@@ -9,7 +9,7 @@ public class Main {
         list.addUser(u2);
         list.addUser(u3);
 
-        System.out.println(list.getUser(new User("Bob", 11)));
+        System.out.println(list.getUser(u1)));
 
         Persister.saveUsers(list);
     }
