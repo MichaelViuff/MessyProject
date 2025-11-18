@@ -65,7 +65,7 @@ public class User
 
   @Override public String toString()
   {
-    return "User{" + "c_id=" + c_id + ", c_nam='" + c_nam + '\'' + ", address='"
-        + address + '\'' + '}';
+    return "User {" + "Id= " + c_id + ", Name= '" + c_nam + "'}";
   }
 }
+
