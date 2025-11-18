@@ -2,7 +2,7 @@ import java.io.*;
 import java.util.*;
 
 public class Persister {
-    public static void saveUsers(ArrayList<User> users) throws IOException {
+    public static void saveUsers(ArrayList<User> users){
 
         File file = new File("users.txt");
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(file))) {
@@ -10,6 +10,9 @@ public class Persister {
             bw.write("Username: " + user.getUserName() + ";");
             bw.write("User ID: " + String.valueOf(user.getUserId()));
         }
+        } catch (IOException e) {
+        System.out.println("Error saving users: " + e.getMessage());
+    
     
          // Creates file
         FileWriter fw = new FileWriter(file); // Create filewriter
