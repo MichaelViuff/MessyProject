@@ -10,9 +10,9 @@ public class Persister
     BufferedWriter bw = new BufferedWriter(fw); // Create BufferedWriter
     for (int x = 0; x < u.size(); x++) // Create a loop
     { // Nicely formatted block
-      bw.write(u.get(x).c_nam); // Write first thing
-      bw.write(u.get(x).geti()); // Write second thing
-      bw.close();
-    } // Ending parenthesis
+      bw.write(u.get(x).c_nam + u.get(x).geti()); // Write first thing And Write second thing
+      bw.newLine();
+    }// Ending parenthesis
+    bw.close();
   }
 }
