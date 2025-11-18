@@ -19,7 +19,7 @@ public class User {
         if (name.length() < 0) {
             return; // If string is invalid, we dont try to store it
         }
-        userName = name;
+        this.userName = name;
     }
 
     public void setAddress(String address) {
@@ -27,15 +27,15 @@ public class User {
     }
 
     public int getUserId() {
-        return userId;
+        return this.userId;
     }
 
     public String getUserName() {
-        return userName;
+        return this.userName;
     }
 
     public String getAddress() {
-        return address;
+        return this.address;
     }
 
     @Override
