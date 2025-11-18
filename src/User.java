@@ -42,4 +42,13 @@ public class User {
         }
         return false;
     }
+
+    @Override
+    public String toString() {
+        return "User [userId=" + userId + ", userName=" + userName + ", address=" + address + ", getUserId()="
+                + getUserId() + ", getUserName()=" + getUserName() + ", getAddress()=" + getAddress() + ", toString()="
+                + super.toString() + "]";
+    }
+
+    
 }
