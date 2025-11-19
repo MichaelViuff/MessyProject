@@ -1,28 +1,28 @@
 public class User
 {
-  public int c_id;
-  public String c_nam;
+  public int ID;
+  public String name;
 
   public User(int i, String n)
   {
-    c_id = i;
+    ID = i;
     if (n.length() < 0 || n.length() > 100) // Testing length
     {
       return; //If string is invalid, we don't try to store it
     }
-    c_nam = n;
+    name = n;
   }
 
-  public int geti()
+  public int getID()
   {
-    return c_id;
+    return ID;
   }
 
   @Override public boolean equals(Object o)
   {
     if (o instanceof User u)
     {
-      return u.c_nam.equals(c_nam);
+      return u.name.equals(name);
     }
     return false;
   }
