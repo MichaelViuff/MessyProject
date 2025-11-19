@@ -14,7 +14,7 @@ public class Main
         System.out.println(list.getu());
 
         try {
-          Persister.s(list);
+          Persister.s(list.getu());
         } catch (Exception e)
         {
           e.printStackTrace();
