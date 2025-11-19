@@ -18,6 +18,11 @@ public class User
     return ID;
   }
 
+  @Override public String toString()
+  {
+    return "User{" + "ID=" + ID + ", name='" + name + '\'' + '}';
+  }
+
   @Override public boolean equals(Object o)
   {
     if (o instanceof User u)
