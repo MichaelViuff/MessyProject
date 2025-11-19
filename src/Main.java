@@ -19,6 +19,7 @@ public class Main {
             Persister.s(list.getu());
 
 
+
         }
     }
 }
