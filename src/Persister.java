@@ -8,10 +8,10 @@ public class Persister
         File file = new File("users.txt"); // Creates file
         FileWriter fw = new FileWriter(file); // Create fileWriter
         BufferedWriter bw = new BufferedWriter(fw); // Create BufferedWriter
-        for(int x=0;x<u.size()-1;x++) // Create a loop
-        { // Nicely formatted block
-            bw.write(u.get(x).name); // Write first thing
-            bw.write(u.get(x).getID()); // Write second thing
-        } // Ending parenthesis
+      // Create a loop
+      for (User user : u) {
+        bw.write(user.name); // Write first thing
+        bw.write(user.getID()); // Write second thing
+      }
     }
 }
