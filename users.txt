@@ -1,0 +1,3 @@
+Bob10 
+Alice20 
+Carl30 
