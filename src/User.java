@@ -6,7 +6,7 @@ public class User
   public User(int i, String n)
   {
     ID = i;
-    if (n.length() < 0 || n.length() > 100) // Testing length
+    if (n.length() > 100) // Testing length
     {
       return; //If string is invalid, we don't try to store it
     }
