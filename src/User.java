@@ -4,9 +4,9 @@ public class User
     public String c_nam;
     public String address;
 
-    public User(int i, String n){
+    public User(int i, String n) {
         c_id = i;
-        if(n.length() < 0 || n.length() > 100) // Testing length
+        if (n.length() == 0 || n.length() > 100) // Testing length
         {
             return; //If string is invalid, we dont try to store it
         }
@@ -15,7 +15,7 @@ public class User
 
     public void setC_nam(String n)
     {
-        if(n.length() < 0)
+        if (n.length() < 0)
         {
             return; //If string is invalid, we dont try to store it
         }
@@ -24,7 +24,7 @@ public class User
 
     public void setA(String a)
     {
-        a = a;
+        this.address = a;
     }
 
     public int geti(){ return c_id; }
@@ -35,9 +35,15 @@ public class User
 
     @Override
     public boolean equals(Object o){
-        if(o instanceof User u){
-            return u.c_nam == c_nam;
+        if (o instanceof User u){
+            return u.c_nam.equals(c_nam);
         }
         return false;
     }
+
+  @Override public String toString()
+  {
+    return "User{" + "c_id=" + c_id + ", c_nam='" + c_nam + '\'' + ", address='"
+        + address + '\'' + '}';
+  }
 }
