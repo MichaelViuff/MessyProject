@@ -9,9 +9,12 @@ public class Persister
         FileWriter fw = new FileWriter(file); // Create filewriter
         BufferedWriter bw = new BufferedWriter(fw); // Create BufferedWriter
         for(int x=0;x<u.size()-1;x++) // Create a loop
-        { // Nicely formatted block
-            bw.write(u.get(x).c_nam); // Write first thing
-            bw.write(u.get(x).geti()); // Write second thing
-        } // Ending parenthesis
+        {
+            bw.write(u.get(x).name + "\n");
+            bw.write(u.get(x).geti() + "\n");
+        }
+
+        bw.close();
+    }
     }
 }

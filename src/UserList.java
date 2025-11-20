@@ -6,15 +6,20 @@ public class UserList
 
     public void add(User u)
     {
+        if (u == null) return;
         this.u.add(u);
-        if(u == null)
+
         {
             return;
         }
     }
 
-    public ArrayList<User> getu()
-    {
-        return u;
+    public User getu(User target) {
+        for (User x : u) {
+            if (x.equals(target)) {
+                return x;
+            }
+        }
+        return null; // hvis ikke fundet
     }
-}
+
