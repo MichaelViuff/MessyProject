@@ -9,9 +9,8 @@ public class UserList
         if (u == null) return;
         this.u.add(u);
 
-        {
-            return;
-        }
+
+
     }
 
     public User getu(User target) {
@@ -22,4 +21,5 @@ public class UserList
         }
         return null; // hvis ikke fundet
     }
+}   /
 
