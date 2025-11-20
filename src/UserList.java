@@ -21,5 +21,5 @@ public class UserList
         }
         return null; // hvis ikke fundet
     }
-}   /
+}
 
