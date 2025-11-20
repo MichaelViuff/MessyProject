@@ -15,6 +15,6 @@ public class Persister
         }
 
         bw.close();
-    }
+
     }
 }
