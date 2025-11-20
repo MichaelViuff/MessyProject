@@ -1,3 +1,5 @@
+import java.io.IOException;
+
 public class Main
 {
     public static void main(String[] args)
@@ -7,12 +9,17 @@ public class Main
         User u3 = new User("Carl", 30);
 
         UserList list = new UserList();
-        list.add(u1);
-        list.add(u2);
-        list.add(u3);
+        list.addUser(u1);
+        list.addUser(u2);
+        list.addUser(u3);
 
-        System.out.println(list.getu(new User("Bob", 11)));
+        System.out.println(list.getUsers());
 
-        Persister.s(list);
+      try {
+        Persister.persistUsers(list.getUsers());
+      } catch (IOException e) {
+        e.printStackTrace();
+      }
+
     }
 }
