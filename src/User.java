@@ -13,13 +13,13 @@ public class User
         name = n;
     }
 
-    public void setC_nam(String n)
+    public void setName(String name)
     {
-        if(n.length() < 0)
+        if (name.length() < 0 || name.length() > 100) // Testing length
         {
-            return; //If string is invalid, we dont try to store it
+            throw new IllegalArgumentException("Name must be between 0 and 100 characters long.");
         }
-        name = n;
+        this.name = name;
     }
 
     public void setAddress(String address)
