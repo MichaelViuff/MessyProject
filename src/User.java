@@ -1,8 +1,8 @@
 public class User
 {
-    public int c_id;
-    public String c_nam;
-    public String address;
+    private int c_id;
+    private String c_nam;
+    private String address;
 
     public User(int i, String n){
         c_id = i;
