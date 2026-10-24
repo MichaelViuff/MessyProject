@@ -22,9 +22,9 @@ public class User
         name = n;
     }
 
-    public void setA(String a)
+    public void setAddress(String address)
     {
-        a = a;
+        this.address = address;
     }
 
     public int getId(){ 
