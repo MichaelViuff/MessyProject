@@ -4,13 +4,9 @@ public class User
     private String name;
     private String address;
 
-    public User(int i, String n){
-        id = i;
-        if(n.length() < 0 || n.length() > 100) // Testing length
-        {
-            return; //If string is invalid, we dont try to store it
-        }
-        name = n;
+    public User(int id, String name){
+        this.id = id;
+        setName(name);
     }
 
     public void setName(String name)
