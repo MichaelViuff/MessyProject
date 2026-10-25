@@ -14,11 +14,10 @@ public class User
 
     public void setC_nam(String n)
     {
-        if(n.length() < 0)
+        if(n.length() == 0)
         {
-            return; //If string is invalid, we dont try to store it
+            return;
         }
-        c_nam = n;
     }
 
     public void setA(String a)
