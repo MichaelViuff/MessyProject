@@ -13,5 +13,6 @@ public class Persister
             bw.write(u.get(x).c_nam); // Write first thing
             bw.write(u.get(x).geti()); // Write second thing
         } // Ending parenthesis
+        bw.close(); // Close the file after writing all users
     }
 }
