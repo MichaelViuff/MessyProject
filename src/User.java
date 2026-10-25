@@ -14,10 +14,12 @@ public class User
 
     public void setC_nam(String n)
     {
-        if(n.length() == 0)
+        if(n == null || n.length() == 0)
         {
             return;
         }
+
+        c_nam = n;
     }
 
     public void setA(String a)
