@@ -6,10 +6,10 @@ public class User
 
     public User(String n, int i) {
         c_id = i;
-        if (n.length() == 0 || n.length() > 100) {
+        if (n == null || n.length() == 0 || n.length() > 100)
+        {
             return;
         }
-        c_nam = n;
     }
 
     public void setC_nam(String n)
