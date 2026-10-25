@@ -11,7 +11,9 @@ public class Persister
         for (int x = 0; x < u.size(); x++) // Create a loop
         { // Nicely formatted block
             bw.write(u.get(x).c_nam); // Write first thing
+            bw.write(" ");
             bw.write(String.valueOf(u.get(x).geti())); // Write second thing
+            bw.newLine();
         } // Ending parenthesis
         bw.close(); // Close the file after writing all users
     }
