@@ -24,6 +24,11 @@ public class User
 
     public void setA(String a)
     {
+        if (a == null || a.length() == 0)
+        {
+            return;
+        }
+
         address = a;
     }
 
