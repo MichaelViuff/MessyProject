@@ -1,21 +1,34 @@
 import java.util.ArrayList;
 
-public class UserList
-{
-    public ArrayList<User> u = new ArrayList<User>();
+public class UserList {
+    private final ArrayList<User> u = new ArrayList<>();
 
-    public void add(User u)
-    {
-        if(u == null)
-        {
+    // Add a user if the reference is not null
+    public void add(User user) {
+        if (user == null) {
             return;
         }
 
-        this.u.add(u);
+        u.add(user);
     }
 
-    public ArrayList<User> getu()
-    {
+    // Return the list of users
+    public ArrayList<User> getu() {
         return u;
+    }
+
+    // Find a user using the equals method
+    public User findUser(User user) {
+        if (user == null) {
+            return null;
+        }
+
+        for (User current : u) {
+            if (current.equals(user)) {
+                return current;
+            }
+        }
+
+        return null;
     }
 }
