@@ -41,4 +41,15 @@ public class User
         }
         return false;
     }
+    public User getu(User user)
+    {
+        for (User u : this.u)
+        {
+            if (u.equals(user))
+            {
+                return u;
+            }
+        }
+        return null;
+    }
 }
