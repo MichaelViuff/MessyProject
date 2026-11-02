@@ -1,8 +1,8 @@
 public class User
 {
-    public int id;
-    public String name;
-    public String address;
+    private int id;
+    private String name;
+    private String address;
 
     public User(int id, String name){
         this.id = id;
@@ -43,4 +43,8 @@ public class User
         }
         return false;
     }
+  @Override
+  public int hashCode() {
+    return java.util.Objects.hash(name);
+  }
 }
