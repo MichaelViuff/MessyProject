@@ -15,7 +15,7 @@ public class UserList
   }
 
   public ArrayList<User> getUsers()
-  e{
+  {
     return new ArrayList<>(users);
   }
 
