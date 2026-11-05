@@ -1,23 +1,25 @@
 public class User
 {
+    private static final int MAX_NAME_LENGTH = 100;
+
     public int c_id;
     public String c_nam;
     public String address;
 
-    public User(int i, String n){
+    public User(int i, String n)
+    {
         c_id = i;
-        if(n.length() < 0 || n.length() > 100) // Testing length
-        {
-            return; //If string is invalid, we dont try to store it
-        }
-        c_nam = n;
+        setC_nam(n);
     }
 
     public void setC_nam(String n)
     {
-        if(n.length() < 0)
+        if(n == null || n.isBlank() || n.length() > MAX_NAME_LENGTH)
         {
-            return; //If string is invalid, we dont try to store it
+            throw new IllegalArgumentException(
+                "Navnet skal være udfyldt og må højst have "
+                    + MAX_NAME_LENGTH + " tegn."
+            );
         }
         c_nam = n;
     }
