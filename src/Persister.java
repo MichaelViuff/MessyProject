@@ -12,10 +12,10 @@ public class Persister
         {
             for (int x = 0; x < u.size(); x++)
             {
-                 bw.write(u.get(x).getn());
+                 bw.write(u.get(x).getName());
                  bw.write(";");
 
-                 bw.write(Integer.toString(u.get(x).geti()));
+                 bw.write(Integer.toString(u.get(x).getId()));
                  bw.newLine();
             }
         }

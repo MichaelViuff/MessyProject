@@ -25,22 +25,22 @@ public class User
         name = n;
     }
 
-    public void setA(String a)
+    public void setAddress(String a)
     {
         address = a;
     }
 
-    public int geti()
+    public int getId()
     {
         return id;
     }
 
-    public String getn()
+    public String getName()
     {
         return name;
     }
 
-    public String geta()
+    public String getAddress()
     {
         return address;
     }
