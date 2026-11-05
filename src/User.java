@@ -47,14 +47,22 @@ public class User
     @Override
     public boolean equals(Object o)
     {
-        if(o instanceof User u){
+        if(o instanceof User u)
+        {
             return java.util.Objects.equals(c_nam, u.c_nam);
         }
         return false;
     }
+
     @Override
     public int hashCode()
     {
         return java.util.Objects.hashCode(c_nam);
+    }
+
+    @Override
+    public String toString()
+    {
+        return "ID: " + c_id + ", navn: "+ c_nam;
     }
 }
