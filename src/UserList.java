@@ -13,11 +13,11 @@ public class UserList
         this.u.add(u);
     }
 
-    public ArrayList<User> getu()
+    public ArrayList<User> getUsers()
     {
         return u;
     }
-    public User getu(User user)
+    public User findUser(User user)
     {
         if (user == null)
         {
