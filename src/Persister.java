@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class Persister
 {
-    public static void s(ArrayList<User> u) throws IOException
+    public static void saveUsers(ArrayList<User> u) throws IOException
     {
         try (BufferedWriter bw =
                  new BufferedWriter(new FileWriter("users.txt")))

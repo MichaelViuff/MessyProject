@@ -17,7 +17,7 @@ public class Main
 
         try
         {
-          Persister.s(list.getUsers());
+          Persister.saveUsers(list.getUsers());
         }
         catch (IOException e)
         {
