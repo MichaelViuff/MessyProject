@@ -17,4 +17,21 @@ public class UserList
     {
         return u;
     }
+    public User getu(User user)
+    {
+        if (user == null)
+        {
+            return null;
+        }
+
+        for (User currentUser : u)
+        {
+            if (currentUser.equals(user))
+            {
+                return currentUser;
+            }
+        }
+
+        return null;
+    }
 }
