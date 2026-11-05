@@ -26,14 +26,23 @@ public class User
 
     public void setA(String a)
     {
-        a = a;
+        address = a;
     }
 
-    public int geti(){ return c_id; }
+    public int geti()
+    {
+        return c_id;
+    }
 
-    public String getn(){ return c_nam; }
+    public String getn()
+    {
+        return c_nam;
+    }
 
-    public String geta(){ return "STREETNAME"; }
+    public String geta()
+    {
+        return address;
+    }
 
     @Override
     public boolean equals(Object o)
