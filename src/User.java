@@ -3,25 +3,26 @@ public class User
     private static final int MAX_NAME_LENGTH = 100;
 
     public int id;
-    public String c_nam;
+    public String name;
     public String address;
 
     public User(int i, String n)
     {
-         id = i;
-        setC_nam(n);
+        id = i;
+        setName(n);
     }
 
-    public void setC_nam(String n)
+    public void setName(String n)
     {
-        if(n == null || n.isBlank() || n.length() > MAX_NAME_LENGTH)
+        if (n == null || n.isBlank() || n.length() > MAX_NAME_LENGTH)
         {
             throw new IllegalArgumentException(
                 "Navnet skal være udfyldt og må højst have "
                     + MAX_NAME_LENGTH + " tegn."
             );
         }
-        c_nam = n;
+
+        name = n;
     }
 
     public void setA(String a)
@@ -36,7 +37,7 @@ public class User
 
     public String getn()
     {
-        return c_nam;
+        return name;
     }
 
     public String geta()
@@ -47,22 +48,23 @@ public class User
     @Override
     public boolean equals(Object o)
     {
-        if(o instanceof User u)
+        if (o instanceof User u)
         {
-            return java.util.Objects.equals(c_nam, u.c_nam);
+            return java.util.Objects.equals(name, u.name);
         }
+
         return false;
     }
 
     @Override
     public int hashCode()
     {
-        return java.util.Objects.hashCode(c_nam);
+        return java.util.Objects.hashCode(name);
     }
 
     @Override
     public String toString()
     {
-        return "ID: " + id + ", navn: "+ c_nam;
+        return "ID: " + id + ", navn: " + name;
     }
 }
