@@ -2,13 +2,13 @@ public class User
 {
     private static final int MAX_NAME_LENGTH = 100;
 
-    public int c_id;
+    public int id;
     public String c_nam;
     public String address;
 
     public User(int i, String n)
     {
-        c_id = i;
+         id = i;
         setC_nam(n);
     }
 
@@ -31,7 +31,7 @@ public class User
 
     public int geti()
     {
-        return c_id;
+        return id;
     }
 
     public String getn()
@@ -63,6 +63,6 @@ public class User
     @Override
     public String toString()
     {
-        return "ID: " + c_id + ", navn: "+ c_nam;
+        return "ID: " + id + ", navn: "+ c_nam;
     }
 }
