@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class UserList
 {
-    public ArrayList<User> u = new ArrayList<User>();
+    private final ArrayList<User> u = new ArrayList<User>();
 
     public void add(User u)
     {
@@ -15,7 +15,7 @@ public class UserList
 
     public ArrayList<User> getUsers()
     {
-        return u;
+        return new ArrayList<>(u);
     }
     public User findUser(User user)
     {
