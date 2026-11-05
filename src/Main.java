@@ -1,3 +1,5 @@
+import java.io.IOException;
+
 public class Main
 {
     public static void main(String[] args)
@@ -13,6 +15,13 @@ public class Main
 
         System.out.println(list.getu(new User(10, "Bob")));
 
-        Persister.s(list);
+        try
+        {
+          Persister.s(list.getu());
+        }
+        catch (IOException e)
+        {
+            System.err.println("Kunne ikke gemme brugerne: " + e.getMessage());
+        }
     }
 }
