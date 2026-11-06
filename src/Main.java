@@ -11,9 +11,9 @@ public class Main
     UserList list = new UserList();
     list.add(u1);
     list.add(u2);
-    list.add(u3);
 
     System.out.println(list.getu());
+
     try
     {
       Persister.s(list.getu());
