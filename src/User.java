@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class User
 {
   public int userId;
@@ -6,18 +8,14 @@ public class User
   public User(String name, int userId)
   {
     this.userId = userId;
-    if (name.length() < 0 || name.length() > 100)
-    {
-      return;
-    }
-    this.name = name;
+    setName(name);
   }
 
   public void setName(String name)
   {
-    if (name.length() < 0)
+    if (name == null || name.isEmpty() || name.length() > 100)
     {
-      return;
+      throw new IllegalArgumentException("Invalid name! Try again.");
     }
     this.name = name;
   }
@@ -36,7 +34,7 @@ public class User
   {
     if (o instanceof User u)
     {
-      return u.name == name;
+      return Objects.equals(u.name, name);
     }
     return false;
   }
