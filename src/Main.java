@@ -22,7 +22,7 @@ public class Main
 
     catch (IOException e)
     {
-      throw new RuntimeException(e);
+      System.out.println("Could not write to file: " + e.getMessage());
     }
   }
 }

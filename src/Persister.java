@@ -6,12 +6,17 @@ public class Persister
   public static void writeToFile(ArrayList<User> users) throws IOException
   {
     File file = new File("users.txt");
-    FileWriter fileWriter = new FileWriter(file);
-    BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-    for (User user : users)
+
+    try (BufferedWriter bufferedWriter = new BufferedWriter(
+        new FileWriter(file)))
     {
-      bufferedWriter.write(user.name);
-      bufferedWriter.write(user.getUserId());
+      for (User user : users)
+      {
+        bufferedWriter.write(user.getName());
+        bufferedWriter.write("\t");
+        bufferedWriter.write(String.valueOf(user.getUserId()));
+        bufferedWriter.newLine();
+      }
     }
   }
 }

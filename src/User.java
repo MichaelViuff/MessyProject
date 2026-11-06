@@ -2,6 +2,7 @@ import java.util.Objects;
 
 public class User
 {
+  private static final int MAX_NAME_LENGTH = 100;
   public int userId;
   public String name;
 
@@ -13,7 +14,7 @@ public class User
 
   public void setName(String name)
   {
-    if (name == null || name.isEmpty() || name.length() > 100)
+    if (name == null || name.isEmpty() || name.length() > MAX_NAME_LENGTH)
     {
       throw new IllegalArgumentException("Invalid name! Try again.");
     }
