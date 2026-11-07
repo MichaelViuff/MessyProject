@@ -15,6 +15,10 @@ public class Main
 
         System.out.println(list.getu());
 
-        Persister.s(list.getu());
+        try {
+            Persister.s(list.getu());
+        } catch (IOException e) {
+            System.out.println("Could not save users " + e.getMessage());
+        }
     }
 }
