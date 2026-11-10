@@ -6,7 +6,7 @@ public class User
 
     public User(int i, String n){
         c_id = i;
-       if(n==null || n.length() > 100)
+       if(n==null || n.length() > 100) 
         {
             return; //If string is invalid, we dont try to store it
         }
