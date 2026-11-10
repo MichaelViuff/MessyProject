@@ -6,7 +6,7 @@ public class User
 
     public User(int i, String n){
         c_id = i;
-        if(n.length() < 0 || n.length() > 100) // Testing length
+       if(n==null || n.length() > 100)
         {
             return; //If string is invalid, we dont try to store it
         }
@@ -15,7 +15,7 @@ public class User
 
     public void setC_nam(String n)
     {
-        if(n.length() < 0)
+        if(n == null || n.length() > 100)
         {
             return; //If string is invalid, we dont try to store it
         }
