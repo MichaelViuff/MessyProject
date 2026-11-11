@@ -2,36 +2,23 @@ public class User
 {
     public int c_id;
     public String c_nam;
-    public String address;
 
-    public User(int i, String n){
-        c_id = i;
-        if(n.length() < 0 || n.length() > 100) // Testing length
+
+    public User(String Name, int ID){
+        c_id = ID;
+        if(Name.length() < 0 || Name.length() > 100) // Testing length
         {
             return; //If string is invalid, we dont try to store it
         }
-        c_nam = n;
+        c_nam = Name;
     }
 
-    public void setC_nam(String n)
-    {
-        if(n.length() < 0)
-        {
-            return; //If string is invalid, we dont try to store it
-        }
-        c_nam = n;
-    }
-
-    public void setA(String a)
-    {
-        a = a;
-    }
 
     public int geti(){ return c_id; }
 
     public String getn(){ return c_nam; }
 
-    public String geta(){ return "STREETNAME"; }
+
 
     @Override
     public boolean equals(Object o){
@@ -40,4 +27,11 @@ public class User
         }
         return false;
     }
+
+    @Override
+    public String toString() {
+        return "User " + c_nam + ", ID=" + c_id;
+    }
+
+
 }
