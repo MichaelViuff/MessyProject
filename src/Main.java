@@ -1,6 +1,8 @@
+import java.io.IOException;
+
 public class Main
 {
-    public static void main(String[] args)
+    public static void main(String[] args) throws IOException
     {
         User u1 = new User("Bob", 10);
         User u2 = new User("Alice", 20);
@@ -13,6 +15,6 @@ public class Main
 
         System.out.println(list.getu(new User("Bob", 11)));
 
-        Persister.s(list);
+        Persister.s(list.u);
     }
 }
