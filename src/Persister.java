@@ -3,9 +3,9 @@ import java.util.*;
 
 public class Persister
 {
-    public static void s(ArrayList<User> u) throws IOException
+    public static void s(ArrayList<User> u, String fileName) throws IOException
     {
-        File file = new File("users.txt");
+        File file = new File(fileName);
         FileWriter fw = new FileWriter(file);
         BufferedWriter bw = new BufferedWriter(fw);
         for (int x = 0; x < u.size(); x++)
