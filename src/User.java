@@ -4,13 +4,13 @@ public class User
     public String c_nam;
 
 
-    public User(String i, int n){
-        c_id = n;
-        if(i.length() < 0 || i.length() > 100) // Testing length
+    public User(String Name, int ID){
+        c_id = ID;
+        if(Name.length() < 0 || Name.length() > 100) // Testing length
         {
             return; //If string is invalid, we dont try to store it
         }
-        c_nam = i;
+        c_nam = Name;
     }
 
 
