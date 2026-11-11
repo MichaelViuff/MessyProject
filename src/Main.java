@@ -17,4 +17,5 @@ public class Main
 
         Persister.s(list.u, "User.txt");
     }
+
 }
