@@ -6,11 +6,12 @@ public class UserList
 
     public void add(User u)
     {
-        this.u.add(u);
-        if(u == null)
+        if (u == null)
         {
             return;
         }
+
+        this.u.add(u);
     }
 
     public User getu(User searched) {
