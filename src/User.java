@@ -32,7 +32,10 @@ public class User
 
     public String getn(){ return c_nam; }
 
-    public String geta(){ return "STREETNAME"; }
+    public String geta()
+    {
+        return address;
+    }
 
     @Override
     public boolean equals(Object o) {
