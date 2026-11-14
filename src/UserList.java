@@ -1,20 +1,40 @@
+
 import java.util.ArrayList;
 
 public class UserList
 {
-    public ArrayList<User> u = new ArrayList<User>();
+    private ArrayList<User> users = new ArrayList<>();
 
-    public void add(User u)
+    public void add(User user)
     {
-        this.u.add(u);
-        if(u == null)
+        if (user == null)
         {
             return;
         }
+
+        users.add(user);
     }
 
-    public ArrayList<User> getu()
+    public ArrayList<User> getUsers()
     {
-        return u;
+        return users;
+    }
+
+    public User findUser(User searched)
+    {
+        if (searched == null)
+        {
+            return null;
+        }
+
+        for (User user : users)
+        {
+            if (user.equals(searched))
+            {
+                return user;
+            }
+        }
+
+        return null;
     }
 }
