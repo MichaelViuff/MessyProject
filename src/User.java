@@ -1,52 +1,68 @@
 
+import java.util.Objects;
+
 public class User
 {
-    public int c_id;
-    public String c_nam;
-    public String address;
+    private static final int MAX_NAME_LENGTH = 100;
 
-    public User(int i, String n) {
-        validateName(n);
-        c_id = i;
-        c_nam = n;
+    private int id;
+    private String name;
+    private String address;
+
+    public User(int id, String name)
+    {
+        validateName(name);
+        this.id = id;
+        this.name = name;
     }
 
-    private static void validateName(String name) {
-        if (name == null || name.isBlank() || name.length() > 100) {
+    private static void validateName(String name)
+    {
+        if (name == null || name.isBlank() || name.length() > MAX_NAME_LENGTH)
+        {
             throw new IllegalArgumentException("Invalid username");
         }
     }
 
-    public void setC_nam(String n)
+    public void setName(String name)
     {
-        validateName(n);
-        c_nam = n;
+        validateName(name);
+        this.name = name;
     }
 
-    public void setA(String a)
+    public void setAddress(String address)
     {
-        this.address = a;
+        this.address = address;
     }
 
-    public int geti(){ return c_id; }
+    public int getId()
+    {
+        return id;
+    }
 
-    public String getn(){ return c_nam; }
+    public String getName()
+    {
+        return name;
+    }
 
-    public String geta()
+    public String getAddress()
     {
         return address;
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (o instanceof User u) {
-            return java.util.Objects.equals(u.c_nam, c_nam);
+    public boolean equals(Object o)
+    {
+        if (o instanceof User user)
+        {
+            return Objects.equals(user.name, name);
         }
         return false;
     }
 
     @Override
-    public int hashCode() {
-        return java.util.Objects.hashCode(c_nam);
+    public int hashCode()
+    {
+        return Objects.hashCode(name);
     }
 }

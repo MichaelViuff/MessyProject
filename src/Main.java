@@ -1,10 +1,11 @@
+
 import java.io.IOException;
 
 public class Main
 {
     public static void main(String[] args)
     {
-        User u1 = new User(10,"Bob");
+        User u1 = new User(10, "Bob");
         User u2 = new User(20, "Alice");
         User u3 = new User(30, "Carl");
 
@@ -13,13 +14,20 @@ public class Main
         list.add(u2);
         list.add(u3);
 
-        System.out.println(list.getu(new User(11,"Bob")));
+        User found = list.findUser(new User(11, "Bob"));
 
-        try {
-            Persister.s(list.getu());
-        } catch (IOException e) {
-            System.err.println("Could not save users: " + e.getMessage());
+        if (found != null)
+        {
+            System.out.println(found.getName());
         }
 
+        try
+        {
+            Persister.save(list.getUsers());
+        }
+        catch (IOException e)
+        {
+            System.err.println("Could not save users: " + e.getMessage());
+        }
     }
 }
