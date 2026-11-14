@@ -34,10 +34,15 @@ public class User
     public String geta(){ return "STREETNAME"; }
 
     @Override
-    public boolean equals(Object o){
-        if(o instanceof User u){
-            return u.c_nam == c_nam;
+    public boolean equals(Object o) {
+        if (o instanceof User user) {
+            return java.util.Objects.equals(user.c_nam, c_nam);
         }
         return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return java.util.Objects.hashCode(c_nam);
     }
 }
