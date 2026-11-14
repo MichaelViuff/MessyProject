@@ -19,10 +19,7 @@ public class User
 
     public void setC_nam(String n)
     {
-        if(n.length() < 0)
-        {
-            return;
-        }
+        validateName(n);
         c_nam = n;
     }
 
