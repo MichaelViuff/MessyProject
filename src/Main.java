@@ -12,6 +12,6 @@ public class Main
 
         System.out.println(list.getu(new User(11, "Bob")));
 
-        Persister.s(list);
+        Persister.s(list.getu());
     }
 }
