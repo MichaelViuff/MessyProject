@@ -1,13 +1,19 @@
 public class User {
+    private static final int MAX_NAME_LENGTH = 100;
+
     public int c_id;
     public String c_nam;
     public String address;
 
     public User(int i, String n) {
-        c_id = i;
-        if (n.length() > 100) { // Testing length
-            return; // If string is invalid, we dont try to store it
+        if (i <= 0) {
+            throw new IllegalArgumentException("User ID must be positive");
         }
+        if (n == null || n.isBlank() || n.length() > MAX_NAME_LENGTH) {
+            throw new IllegalArgumentException(
+                    "Name must be non-blank and at most " + MAX_NAME_LENGTH + " characters");
+        }
+        c_id = i;
         c_nam = n;
     }
 
