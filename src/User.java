@@ -22,9 +22,8 @@ public class User
         c_nam = n;
     }
 
-    public void setA(String a)
-    {
-        a = a;
+    public void setA(String a) {
+        address = a;
     }
 
     public int geti(){ return c_id; }
