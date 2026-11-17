@@ -5,7 +5,6 @@ public class Main
         User u1 = new User(10, "Bob");
         User u2 = new User(20 ,"ALice");
         User u3 = new User(30, "Carl");
-
         UserList list = new UserList();
         list.add(u1);
         list.add(u2);
