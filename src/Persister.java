@@ -2,8 +2,8 @@ import java.io.*;
 import java.util.*;
 
 public class Persister {
-    public static void s(ArrayList<User> u) throws IOException {
-        File file = new File("users.txt"); // Creates file
+    public static void s(ArrayList<User> u, String outputFile) throws IOException {
+        File file = new File(outputFile);
         FileWriter fw = new FileWriter(file); // Create filewriter
         BufferedWriter bw = new BufferedWriter(fw); // Create BufferedWriter
         for (int x = 0; x < u.size(); x++) { // Create a loop
