@@ -12,6 +12,7 @@ public class Persister
         { // Nicely formatted block
             bw.write(u.get(x).c_nam); // Write first thing
             bw.write("" + u.get(x).geti()); // Write second thing
+            bw.newLine();
         } // Ending parenthesis
         bw.close();
     }
