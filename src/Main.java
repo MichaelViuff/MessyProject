@@ -2,17 +2,21 @@ public class Main
 {
     public static void main(String[] args)
     {
-        User u1 = new User("Bob", 10);
-        User u2 = new User("Alice", 20);
-        User u3 = new User("Carl", 30);
+        User u1 = new User(10, "Bob");
+        User u2 = new User(20, "Alice");
+        User u3 = new User(30, "Carl");
 
         UserList list = new UserList();
         list.add(u1);
         list.add(u2);
         list.add(u3);
 
-        System.out.println(list.getu(new User("Bob", 11)));
+        System.out.println(list.getu());
 
-        Persister.s(list);
+        try {
+            Persister.s(list.getu());
+        } catch (java.io.IOException e) {
+            System.err.println("Kunne ikke gemme brugerne: " + e.getMessage());
+        }
     }
 }
