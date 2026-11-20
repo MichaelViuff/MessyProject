@@ -6,26 +6,26 @@ public class User
 
     public User(int i, String n) {
         c_id = i;
-        setC_nam(n);
+        setName(n);
     }
 
-    public void setC_nam(String n) {
+    public void setName(String n) {
         if (n == null || n.isBlank() || n.length() > 100) {
             throw new IllegalArgumentException("Navnet skal indeholde tekst og må højst være 100 tegn.");
         }
         c_nam = n;
     }
 
-    public void setA(String a)
+    public void setAdress(String a)
     {
         this.address = a;
     }
 
-    public int geti(){ return c_id; }
+    public int getiId(){ return c_id; }
 
-    public String getn(){ return c_nam; }
+    public String getName(){ return c_nam; }
 
-    public String geta() { return address; }
+    public String getAdress() { return address; }
 
     @Override
     public boolean equals(Object other) {

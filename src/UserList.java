@@ -9,7 +9,7 @@ public class UserList {
         u.add(user);
     }
 
-    public ArrayList<User> getu() {
+    public ArrayList<User> getUsers() {
         return u;
     }
 }

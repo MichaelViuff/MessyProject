@@ -11,10 +11,10 @@ public class Main
         list.add(u2);
         list.add(u3);
 
-        System.out.println(list.getu());
+        System.out.println(list.getUsers());
 
         try {
-            Persister.s(list.getu());
+            Persister.saveUsers(list.getUsers());
         } catch (java.io.IOException e) {
             System.err.println("Kunne ikke gemme brugerne: " + e.getMessage());
         }
