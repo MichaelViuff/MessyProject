@@ -1,43 +1,55 @@
-public class User
-{
+
+public class User {
     public int c_id;
     public String c_nam;
     public String address;
 
-    public User(int i, String n){
+    public User(int i, String n) {
         c_id = i;
-        if(n.length() < 0 || n.length() > 100) // Testing length
-        {
-            return; //If string is invalid, we dont try to store it
+
+        if (n == null || n.length() == 0 || n.length() > 100) {
+            return;
         }
+
         c_nam = n;
     }
 
-    public void setC_nam(String n)
-    {
-        if(n.length() < 0)
-        {
-            return; //If string is invalid, we dont try to store it
+    public void setC_nam(String n) {
+        if (n == null || n.length() == 0 || n.length() > 100) {
+            return;
         }
+
         c_nam = n;
     }
 
-    public void setA(String a)
-    {
-        a = a;
+    public void setA(String a) {
+        address = a;
     }
 
-    public int geti(){ return c_id; }
+    public int geti() {
+        return c_id;
+    }
 
-    public String getn(){ return c_nam; }
+    public String getn() {
+        return c_nam;
+    }
 
-    public String geta(){ return "STREETNAME"; }
+    public String geta() {
+        return address;
+    }
 
     @Override
-    public boolean equals(Object o){
-        if(o instanceof User u){
-            return u.c_nam == c_nam;
+    public boolean equals(Object o) {
+        if (o instanceof User) {
+            User u = (User) o;
+            return java.util.Objects.equals(u.c_nam, c_nam);
         }
+
         return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return java.util.Objects.hashCode(c_nam);
     }
 }
