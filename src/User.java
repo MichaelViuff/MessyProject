@@ -18,8 +18,8 @@ public class User {
         this.name = name;
     }
 
-    public void setAddress(String a) {
-        a = a;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public int getId() {
@@ -31,7 +31,7 @@ public class User {
     }
 
     public String getAddress() {
-        return "STREETNAME";
+        return address;
     }
 
     @Override
