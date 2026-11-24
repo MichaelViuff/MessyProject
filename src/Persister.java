@@ -1,17 +1,18 @@
 import java.io.*;
-import java.util.*;
+import java.util.ArrayList;
 
 public class Persister
 {
     public static void saveUsers(ArrayList<User> users) throws IOException
     {
         File file = new File("users.txt");
-        FileWriter fileWriter = new FileWriter(file);
-        BufferedWriter writer = new BufferedWriter(fileWriter);
-        for (int i = 0; i < users.size(); i++)
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(file)))
         {
-            writer.write(users.get(i).name);
-            writer.write(users.get(i).getId());
+            for (int i = 0; i < users.size(); i++)
+            {
+                writer.write(users.get(i).name);
+                writer.write(users.get(i).getId());
+            }
         }
     }
 }
