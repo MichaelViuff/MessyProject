@@ -13,8 +13,10 @@ public class UserList
         }
     }
 
-    public ArrayList<User> getu()
+    public ArrayList<User> getu(u)
     {
         return u;
     }
+
+
 }
