@@ -1,6 +1,6 @@
 public class User {
     public static final int MAX_NAME_LENGTH = 100;
-    public int id;
+    public final int id;
     private String name;
     public String address;
 

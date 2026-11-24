@@ -10,7 +10,7 @@ public class Persister
         {
             for (User user : users)
             {
-                writer.write(user.getName());;
+                writer.write(user.getName());
                 writer.write(" ");
                 writer.write(String.valueOf(user.getId()));
                 writer.newLine();
