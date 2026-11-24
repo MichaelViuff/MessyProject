@@ -1,4 +1,5 @@
 public class User {
+    public static final int MAX_NAME_LENGTH = 100;
     public int id;
     public String name;
     public String address;
@@ -15,8 +16,8 @@ public class User {
     }
 
     private static void validateName(String name) {
-        if (name == null || name.isEmpty() || name.length() > 100) {
-            throw new IllegalArgumentException("Navnet skal være mellem 1 og 100 tegn.");
+        if (name == null || name.isEmpty() || name.length() > MAX_NAME_LENGTH) {
+            throw new IllegalArgumentException("Navnet skal være mellem 1 og " + MAX_NAME_LENGTH + " tegn.");
         }
     }
 
