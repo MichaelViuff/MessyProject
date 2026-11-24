@@ -8,7 +8,7 @@ public class Main {
         System.out.println(userList.getUsers());
 
         try {
-            Persister.saveUsers(userList.getUsers());
+            Persister.saveUsers(userList.getUsers(), "users.txt");
         } catch (java.io.IOException e) {
             System.err.println("Kunne ikke gemme brugerlisten: " + e.getMessage());
         }
