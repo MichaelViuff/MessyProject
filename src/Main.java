@@ -1,20 +1,14 @@
-public class Main
-{
-    public static void main(String[] args)
-    {
-        User u1 = new User(10, "Bob");
-        User u2 = new User(20, "Alice");
-        User u3 = new User(30, "Carl");
+public class Main {
+    public static void main(String[] args) {
+        UserList userList = new UserList();
+        userList.add(new User(10, "Bob"));
+        userList.add(new User(20, "Alice"));
+        userList.add(new User(30, "Carl"));
 
-        UserList list = new UserList();
-        list.add(u1);
-        list.add(u2);
-        list.add(u3);
-
-        System.out.println(list.getUsers());
+        System.out.println(userList.getUsers());
 
         try {
-            Persister.saveUsers(list.getUsers());
+            Persister.saveUsers(userList.getUsers());
         } catch (java.io.IOException e) {
             System.err.println("Kunne ikke gemme brugerlisten: " + e.getMessage());
         }
