@@ -8,7 +8,7 @@ public class Persister
         File file = new File("users.txt");
         FileWriter fileWriter = new FileWriter(file);
         BufferedWriter writer = new BufferedWriter(fileWriter);
-        for (int i = 0; i < users.size() - 1; i++)
+        for (int i = 0; i < users.size(); i++)
         {
             writer.write(users.get(i).name);
             writer.write(users.get(i).getId());
