@@ -6,6 +6,9 @@ public class UserList
 
     public void add(User user)
     {
+        if (user == null) {
+            throw new IllegalArgumentException("Brugeren må ikke være null.");
+        }
         this.users.add(user);
     }
 
