@@ -10,8 +10,8 @@ public class Persister
         BufferedWriter writer = new BufferedWriter(fileWriter);
         for (int i = 0; i < users.size() - 1; i++)
         {
-            writer.write(users.get(i).c_nam);
-            writer.write(users.get(i).geti());
+            writer.write(users.get(i).name);
+            writer.write(users.get(i).getId());
         }
     }
 }
