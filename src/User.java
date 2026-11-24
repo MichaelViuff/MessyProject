@@ -5,17 +5,19 @@ public class User {
 
     public User(int id, String name) {
         this.id = id;
-        if (name.length() < 0 || name.length() > 100) {
-            return;
-        }
+        validateName(name);
         this.name = name;
     }
 
     public void setName(String name) {
-        if (name.length() < 0) {
-            return;
-        }
+        validateName(name);
         this.name = name;
+    }
+
+    private static void validateName(String name) {
+        if (name == null || name.isEmpty() || name.length() > 100) {
+            throw new IllegalArgumentException("Navnet skal være mellem 1 og 100 tegn.");
+        }
     }
 
     public void setAddress(String address) {
