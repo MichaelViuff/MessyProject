@@ -10,19 +10,10 @@ public class User {
         this.name = name;
     }
 
-    public void setName(String name) {
-        validateName(name);
-        this.name = name;
-    }
-
     private static void validateName(String name) {
         if (name == null || name.isEmpty() || name.length() > MAX_NAME_LENGTH) {
             throw new IllegalArgumentException("Navnet skal være mellem 1 og " + MAX_NAME_LENGTH + " tegn.");
         }
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
     }
 
     public int getId() {
@@ -31,10 +22,6 @@ public class User {
 
     public String getName() {
         return name;
-    }
-
-    public String getAddress() {
-        return address;
     }
 
     @Override
