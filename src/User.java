@@ -1,7 +1,7 @@
 public class User {
     public static final int MAX_NAME_LENGTH = 100;
     public int id;
-    public String name;
+    private String name;
     public String address;
 
     public User(int id, String name) {
