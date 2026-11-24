@@ -39,8 +39,13 @@ public class User {
     @Override
     public boolean equals(Object o) {
         if (o instanceof User u) {
-            return u.name == name;
+            return java.util.Objects.equals(u.name, name);
         }
         return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return java.util.Objects.hashCode(name);
     }
 }
