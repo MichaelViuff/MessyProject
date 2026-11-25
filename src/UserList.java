@@ -2,19 +2,19 @@ import java.util.ArrayList;
 
 public class UserList
 {
-    public ArrayList<User> u = new ArrayList<User>();
+    public ArrayList<User> users = new ArrayList<>();
 
     public void add(User u)
     {
-        this.u.add(u);
-        if(u == null)
+        if (u == null)
         {
-            return;
+            return; //Tjek først om brugeren mangler
         }
+        this.users.add(u); //Tilføj kun hvis brugeren findes
     }
 
-    public ArrayList<User> getu()
+    public ArrayList<User> getUsers()
     {
-        return u;
+        return users;
     }
 }
