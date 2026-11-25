@@ -10,11 +10,7 @@ public class User
             throw new IllegalArgumentException("Invalid user ID");
         }
         c_id = i;
-        if(n == null || n.isBlank() || n.length() > 100)
-        {
-            throw new IllegalArgumentException("Invalid user name");
-        }
-        c_nam = n;
+        setC_nam(n);
     }
 
     public void setC_nam(String n)
