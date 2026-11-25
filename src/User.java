@@ -17,7 +17,7 @@ public class User
 
     public void setC_nam(String n)
     {
-        if(n.length() < 0)
+        if(n.length() > 100 || n == null)
         {
             return; //If string is invalid, we dont try to store it
         }
