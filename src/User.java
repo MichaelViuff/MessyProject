@@ -5,6 +5,10 @@ public class User
     public String address;
 
     public User(int i, String n){
+        if(i <= 0)
+        {
+            throw new IllegalArgumentException("Invalid user ID");
+        }
         c_id = i;
         if(n == null || n.isBlank() || n.length() > 100)
         {
