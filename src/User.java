@@ -4,7 +4,6 @@ public class User
 {
     public int c_id;
     public String c_nam;
-    public String address;
 
     public User(String n, int i){
         c_id = i;
