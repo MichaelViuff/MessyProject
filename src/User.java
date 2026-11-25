@@ -49,4 +49,9 @@ public class User
     {
         return c_nam.hashCode();
     }
+    @Override
+    public String toString()
+    {
+        return "ID: " + c_id + ", Name: " + c_nam;
+    }
 }
