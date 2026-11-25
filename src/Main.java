@@ -13,6 +13,6 @@ public class Main
 
         System.out.println(list.getu());
 
-        Persister.s(list);
+        Persister.s(list.getu());
     }
 }
