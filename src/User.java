@@ -44,4 +44,9 @@ public class User
         }
         return false;
     }
+    @Override
+    public int hashCode()
+    {
+        return c_nam.hashCode();
+    }
 }
