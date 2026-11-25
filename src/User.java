@@ -24,8 +24,6 @@ public class User
     }
     public int geti(){ return c_id; }
 
-    public String getn(){ return c_nam; }
-
     @Override
     public boolean equals(Object o){
         if (this == o) {
