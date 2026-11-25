@@ -11,9 +11,11 @@ public class Persister
         {
             for(int x=0;x<u.size();x++)
             {
-                bw.write(u.get(x).c_nam);
+                User user = u.get(x);
+
+                bw.write(user.c_nam);
                 bw.write(", ");
-                bw.write(String.valueOf(u.get(x).geti()));
+                bw.write(String.valueOf(user.geti()));
                 bw.newLine();
             }
         } // Ending parenthesis
