@@ -32,8 +32,6 @@ public class User
 
     public String getn(){ return c_nam; }
 
-    public String geta(){ return "STREETNAME"; }
-
     @Override
     public boolean equals(Object o){
         if (this == o) {
