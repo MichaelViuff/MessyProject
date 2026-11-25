@@ -1,8 +1,11 @@
 public class User
 {
+    private static final int MAX_NAME_LENGTH = 100;
+
     public int c_id;
     public String c_nam;
     public String address;
+
 
     public User(int i, String n){
         if(i <= 0)
@@ -15,7 +18,7 @@ public class User
 
     public void setC_nam(String n)
     {
-        if(n == null || n.isBlank() || n.length() > 100)
+        if(n == null || n.isBlank() || n.length() > MAX_NAME_LENGTH)
         {
             throw new IllegalArgumentException("Invalid user name");
         }
