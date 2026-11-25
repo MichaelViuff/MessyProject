@@ -3,20 +3,20 @@ import java.util.*;
 
 public class Persister
 {
-    public static void s(ArrayList<User> u, String fileName) throws IOException
+    public static void s(ArrayList<User> users, String fileName) throws IOException
     {
         File file = new File(fileName);
 
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter(file)))
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(file)))
         {
-            for(int x=0;x<u.size();x++)
+            for(int index=0;index<users.size();index++)
             {
-                User user = u.get(x);
+                User user = users.get(index);
 
-                bw.write(user.c_nam);
-                bw.write(", ");
-                bw.write(String.valueOf(user.geti()));
-                bw.newLine();
+                writer.write(user.name);
+                writer.write(", ");
+                writer.write(String.valueOf(user.geti()));
+                writer.newLine();
             }
         } // Ending parenthesis
     }

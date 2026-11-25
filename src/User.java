@@ -2,55 +2,55 @@ public class User
 {
     private static final int MAX_NAME_LENGTH = 100;
 
-    public int c_id;
-    public String c_nam;
+    public int id;
+    public String name;
     public String address;
 
 
-    public User(int i, String n){
-        if(i <= 0)
+    public User(int id, String name){
+        if(id <= 0)
         {
             throw new IllegalArgumentException("Invalid user ID");
         }
-        c_id = i;
-        setC_nam(n);
+        this.id = id;
+        setC_nam(name);
     }
 
-    public void setC_nam(String n)
+    public void setC_nam(String name)
     {
-        if(n == null || n.isBlank() || n.length() > MAX_NAME_LENGTH)
+        if(name == null || name.isBlank() || name.length() > MAX_NAME_LENGTH)
         {
             throw new IllegalArgumentException("Invalid user name");
         }
-        c_nam = n;
+        this.name = name;
     }
 
-    public void setA(String a)
+    public void setA(String address)
     {
-        this.address = a;
+        this.address = address;
     }
 
-    public int geti(){ return c_id; }
+    public int geti(){ return id; }
 
-    public String getn(){ return c_nam; }
+    public String getn(){ return name; }
 
     public String geta(){ return address; }
 
     @Override
-    public boolean equals(Object o){
-        if(o instanceof User u){
-            return c_nam.equals(u.c_nam);
+    public boolean equals(Object obj){
+        if(obj instanceof User otherUser){
+            return name.equals(otherUser.name);
         }
         return false;
     }
     @Override
     public int hashCode()
     {
-        return c_nam.hashCode();
+        return name.hashCode();
     }
     @Override
     public String toString()
     {
-        return "ID: " + c_id + ", Name: " + c_nam;
+        return "ID: " + id + ", Name: " + name;
     }
 }

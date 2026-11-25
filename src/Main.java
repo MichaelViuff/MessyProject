@@ -4,21 +4,21 @@ public class Main
 {
     public static void main(String[] args)
     {
-        User u1 = new User(10, "Bob");
-        User u2 = new User(20, "Alice");
-        User u3 = new User(30, "Carl");
+        User user1 = new User(10, "Bob");
+        User user2 = new User(20, "Alice");
+        User user3 = new User(30, "Carl");
 
-        UserList list = new UserList();
-        list.add(u1);
-        list.add(u2);
-        list.add(u3);
+        UserList userList = new UserList();
+        userList.add(user1);
+        userList.add(user2);
+        userList.add(user3);
 
-        System.out.println(list.getu());
+        System.out.println(userList.getu());
 
         try {
-            Persister.s(list.getu(), "users.txt");
-        } catch (IOException e) {
-            System.err.println("Could not save users: " + e.getMessage());
+            Persister.s(userList.getu(), "users.txt");
+        } catch (IOException exception) {
+            System.err.println("Could not save users: " + exception.getMessage());
         }
     }
 }
