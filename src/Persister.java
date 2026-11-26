@@ -9,7 +9,7 @@ public class Persister
         File file = new File("users.txt"); // Creates file
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(file)))
         {
-            for(int x=0;x<u.size()-1;x++) // Create a loop
+            for(int x=0;x<u.size();x++) // Create a loop
             { // Nicely formatted block
                 bw.write(u.get(x).c_nam); // Write first thing
                 bw.write(u.get(x).geti()); // Write second thing
