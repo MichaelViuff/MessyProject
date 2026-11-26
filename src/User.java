@@ -2,6 +2,8 @@ import java.util.Objects;
 
 public class User
 {
+    public static final int MAX_NAME_LENGTH = 100;
+
     private int id;
     private String name;
     private String address;
@@ -9,18 +11,18 @@ public class User
     public User(String name, int id)
     {
         this.id = id;
-        if (name == null || name.isEmpty() || name.length() > 100)
+        if (name == null || name.isEmpty() || name.length() > MAX_NAME_LENGTH)
         {
-            throw new IllegalArgumentException("Name must be between 1 and 100 characters");
+            throw new IllegalArgumentException("Name must be between 1 and " + MAX_NAME_LENGTH + " characters");
         }
         this.name = name;
     }
 
     public void setName(String name)
     {
-        if (name == null || name.isEmpty() || name.length() > 100)
+        if (name == null || name.isEmpty() || name.length() > MAX_NAME_LENGTH)
         {
-            throw new IllegalArgumentException("Name must be between 1 and 100 characters");
+            throw new IllegalArgumentException("Name must be between 1 and " + MAX_NAME_LENGTH + " characters");
         }
         this.name = name;
     }
