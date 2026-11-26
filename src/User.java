@@ -1,3 +1,4 @@
+
 public class User
 {
     private static final int MAX_NAME_LENGTH = 100;

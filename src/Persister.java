@@ -1,5 +1,8 @@
-import java.io.*;
-import java.util.*;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
 
 public class Persister
 {
@@ -18,6 +21,6 @@ public class Persister
                 writer.write(String.valueOf(user.getId()));
                 writer.newLine();
             }
-        } // Ending parenthesis
+        }
     }
 }
