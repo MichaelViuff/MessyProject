@@ -2,43 +2,43 @@ import java.util.Objects;
 
 public class User
 {
-    public int c_id;
-    public String c_nam;
-    public String address;
+    private int id;
+    private String name;
+    private String address;
 
-    public User(String n, int i){
-        c_id = i;
-        if(n == null || n.isEmpty() || n.length() > 100) // Testing length
+    public User(String name, int id){
+        this.id = id;
+        if(name == null || name.isEmpty() || name.length() > 100) // Testing length
         {
             throw new IllegalArgumentException("Name must be between 1 and 100 characters");
         }
-        c_nam = n;
+        this.name = name;
     }
 
-    public void setC_nam(String n)
+    public void setName(String name)
     {
-        if(n == null || n.isEmpty() || n.length() > 100)
+        if(name == null || name.isEmpty() || name.length() > 100)
         {
             throw new IllegalArgumentException("Name must be between 1 and 100 characters");
         }
-        c_nam = n;
+        this.name = name;
     }
 
-    public void setA(String a)
+    public void setAddress(String address)
     {
-        address = a;
+        this.address = address;
     }
 
-    public int geti(){ return c_id; }
+    public int getId(){ return id; }
 
-    public String getn(){ return c_nam; }
+    public String getName(){ return name; }
 
-    public String geta(){ return address; }
+    public String getAddress(){ return address; }
 
     @Override
     public boolean equals(Object o){
-        if(o instanceof User u){
-            return Objects.equals(u.c_nam, c_nam);
+        if(o instanceof User other){
+            return Objects.equals(other.name, name);
         }
         return false;
     }
@@ -46,6 +46,6 @@ public class User
     @Override
     public int hashCode()
     {
-        return Objects.hashCode(c_nam);
+        return Objects.hashCode(name);
     }
 }

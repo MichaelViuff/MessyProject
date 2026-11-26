@@ -11,7 +11,7 @@ public class Persister
         {
             for(int x=0;x<u.size();x++) // Create a loop
             { // Nicely formatted block
-                bw.write(u.get(x).c_nam + ";" + u.get(x).geti()); // Write first thing
+                bw.write(u.get(x).getName() + ";" + u.get(x).getId()); // Write first thing
                 bw.newLine();
             } // Ending parenthesis
         }
