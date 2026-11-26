@@ -13,10 +13,10 @@ public class User
             throw new IllegalArgumentException("Invalid user ID");
         }
         this.id = id;
-        setC_nam(name);
+        setName(name);
     }
 
-    public void setC_nam(String name)
+    public void setName(String name)
     {
         if(name == null || name.isBlank() || name.length() > MAX_NAME_LENGTH)
         {
@@ -25,16 +25,16 @@ public class User
         this.name = name;
     }
 
-    public void setA(String address)
+    public void setAddress(String address)
     {
         this.address = address;
     }
 
-    public int geti(){ return id; }
+    public int getId(){ return id; }
 
-    public String getn(){ return name; }
+    public String getName(){ return name; }
 
-    public String geta(){ return address; }
+    public String getAddress(){ return address; }
 
     @Override
     public boolean equals(Object obj){

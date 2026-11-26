@@ -3,7 +3,7 @@ import java.util.*;
 
 public class Persister
 {
-    public static void s(ArrayList<User> users, String fileName) throws IOException
+    public static void saveUsers(ArrayList<User> users, String fileName) throws IOException
     {
         File file = new File(fileName);
 
@@ -15,7 +15,7 @@ public class Persister
 
                 writer.write(user.name);
                 writer.write(", ");
-                writer.write(String.valueOf(user.geti()));
+                writer.write(String.valueOf(user.getId()));
                 writer.newLine();
             }
         } // Ending parenthesis

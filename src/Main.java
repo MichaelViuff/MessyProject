@@ -13,10 +13,10 @@ public class Main
         userList.add(user2);
         userList.add(user3);
 
-        System.out.println(userList.getu());
+        System.out.println(userList.getUsers());
 
         try {
-            Persister.s(userList.getu(), "users.txt");
+            Persister.saveUsers(userList.getUsers(), "users.txt");
         } catch (IOException exception) {
             System.err.println("Could not save users: " + exception.getMessage());
         }
