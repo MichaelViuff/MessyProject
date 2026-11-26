@@ -3,16 +3,16 @@ import java.util.*;
 
 public class Persister
 {
-    public static void s(UserList userList) throws IOException
+    public static void saveUsers(UserList userList) throws IOException
     {
-        ArrayList<User> u = userList.getu();
+        ArrayList<User> users = userList.getUsers();
         File file = new File("users.txt"); // Creates file
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter(file)))
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(file)))
         {
-            for(int x=0;x<u.size();x++) // Create a loop
+            for(User user : users) // Create a loop
             { // Nicely formatted block
-                bw.write(u.get(x).getName() + ";" + u.get(x).getId()); // Write first thing
-                bw.newLine();
+                writer.write(user.getName() + ";" + user.getId()); // Write first thing
+                writer.newLine();
             } // Ending parenthesis
         }
     }

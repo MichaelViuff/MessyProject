@@ -4,20 +4,20 @@ public class Main
 {
     public static void main(String[] args)
     {
-        User u1 = new User("Bob", 10);
-        User u2 = new User("Alice", 20);
-        User u3 = new User("Carl", 30);
+        User bob = new User("Bob", 10);
+        User alice = new User("Alice", 20);
+        User carl = new User("Carl", 30);
 
-        UserList list = new UserList();
-        list.add(u1);
-        list.add(u2);
-        list.add(u3);
+        UserList userList = new UserList();
+        userList.add(bob);
+        userList.add(alice);
+        userList.add(carl);
 
-        System.out.println(list.getUser(new User("Bob", 11)));
+        System.out.println(userList.getUser(new User("Bob", 11)));
 
         try
         {
-            Persister.s(list);
+            Persister.saveUsers(userList);
         }
         catch (IOException e)
         {
