@@ -3,8 +3,9 @@ import java.util.*;
 
 public class Persister
 {
-    public static void s(ArrayList<User> u) throws IOException
+    public static void s(UserList userList) throws IOException
     {
+        ArrayList<User> u = userList.getu();
         File file = new File("users.txt"); // Creates file
         FileWriter fw = new FileWriter(file); // Create filewriter
         BufferedWriter bw = new BufferedWriter(fw); // Create BufferedWriter
