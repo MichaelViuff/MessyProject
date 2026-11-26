@@ -2,7 +2,7 @@
 public class User {
     private static final int MAX_NAME_LENGTH = 100;
 
-    private int id;
+    private final int id;
     private String name;
     private String address;
 
