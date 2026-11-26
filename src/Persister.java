@@ -10,7 +10,7 @@ public class Persister
         File file = new File("users.txt");
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(file)))
         {
-            for(User user : userList.getUsers())
+            for (User user : userList.getUsers())
             {
                 writer.write(user.getName() + ";" + user.getId());
                 writer.newLine();

@@ -6,9 +6,10 @@ public class User
     private String name;
     private String address;
 
-    public User(String name, int id){
+    public User(String name, int id)
+    {
         this.id = id;
-        if(name == null || name.isEmpty() || name.length() > 100)
+        if (name == null || name.isEmpty() || name.length() > 100)
         {
             throw new IllegalArgumentException("Name must be between 1 and 100 characters");
         }
@@ -17,7 +18,7 @@ public class User
 
     public void setName(String name)
     {
-        if(name == null || name.isEmpty() || name.length() > 100)
+        if (name == null || name.isEmpty() || name.length() > 100)
         {
             throw new IllegalArgumentException("Name must be between 1 and 100 characters");
         }
@@ -29,15 +30,26 @@ public class User
         this.address = address;
     }
 
-    public int getId(){ return id; }
+    public int getId()
+    {
+        return id;
+    }
 
-    public String getName(){ return name; }
+    public String getName()
+    {
+        return name;
+    }
 
-    public String getAddress(){ return address; }
+    public String getAddress()
+    {
+        return address;
+    }
 
     @Override
-    public boolean equals(Object o){
-        if(o instanceof User other){
+    public boolean equals(Object o)
+    {
+        if (o instanceof User other)
+        {
             return Objects.equals(other.name, name);
         }
         return false;

@@ -6,7 +6,7 @@ public class UserList
 
     public void add(User user)
     {
-        if(user == null)
+        if (user == null)
         {
             return;
         }
