@@ -17,4 +17,9 @@ public class Persister
 
         bw.close();
     }
+
+    public static void saveUserslist(ArrayList<User> users)
+    {
+
+    }
 }
