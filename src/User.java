@@ -8,18 +8,18 @@ public class User
 
     public User(String n, int i){
         c_id = i;
-        if(n.length() < 0 || n.length() > 100) // Testing length
+        if(n == null || n.isEmpty() || n.length() > 100) // Testing length
         {
-            return; //If string is invalid, we dont try to store it
+            throw new IllegalArgumentException("Name must be between 1 and 100 characters");
         }
         c_nam = n;
     }
 
     public void setC_nam(String n)
     {
-        if(n.length() < 0)
+        if(n == null || n.isEmpty() || n.length() > 100)
         {
-            return; //If string is invalid, we dont try to store it
+            throw new IllegalArgumentException("Name must be between 1 and 100 characters");
         }
         c_nam = n;
     }
