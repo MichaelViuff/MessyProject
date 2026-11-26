@@ -9,9 +9,7 @@ public class Persister {
         File file = new File(fileName);
 
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(file))) {
-            for (int index = 0; index < users.size(); index++) {
-                User user = users.get(index);
-
+            for (User user : users) {
                 writer.write(user.getName());
                 writer.write(", ");
                 writer.write(String.valueOf(user.getId()));
