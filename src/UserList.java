@@ -17,4 +17,9 @@ public class UserList
     {
         return users;
     }
+
+    public boolean getu(User user)
+    {
+            return false;
+    }
 }
