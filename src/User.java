@@ -11,11 +11,7 @@ public class User
     public User(String name, int id)
     {
         this.id = id;
-        if (name == null || name.isEmpty() || name.length() > MAX_NAME_LENGTH)
-        {
-            throw new IllegalArgumentException("Name must be between 1 and " + MAX_NAME_LENGTH + " characters");
-        }
-        this.name = name;
+        setName(name);
     }
 
     public void setName(String name)
