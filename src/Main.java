@@ -1,3 +1,5 @@
+import java.io.IOException;
+
 public class Main
 {
     public static void main(String[] args)
@@ -13,6 +15,13 @@ public class Main
 
         System.out.println(list.getUser(new User("Bob", 11)));
 
-        Persister.s(list);
+        try
+        {
+            Persister.s(list);
+        }
+        catch (IOException e)
+        {
+            System.out.println("Could not save users: " + e.getMessage());
+        }
     }
 }
