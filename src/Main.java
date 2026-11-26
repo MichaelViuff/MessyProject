@@ -15,9 +15,10 @@ public class Main
 
         System.out.println(userList.getUser(new User("Bob", 11)));
 
+        String fileName = args.length > 0 ? args[0] : Persister.DEFAULT_FILE_NAME;
         try
         {
-            Persister.saveUsers(userList);
+            Persister.saveUsers(userList, fileName);
         }
         catch (IOException e)
         {

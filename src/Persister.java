@@ -5,9 +5,11 @@ import java.io.IOException;
 
 public class Persister
 {
-    public static void saveUsers(UserList userList) throws IOException
+    public static final String DEFAULT_FILE_NAME = "users.txt";
+
+    public static void saveUsers(UserList userList, String fileName) throws IOException
     {
-        File file = new File("users.txt");
+        File file = new File(fileName);
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(file)))
         {
             for (User user : userList.getUsers())
