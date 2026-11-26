@@ -8,7 +8,7 @@ public class User
 
     public User(String name, int id){
         this.id = id;
-        if(name == null || name.isEmpty() || name.length() > 100) // Testing length
+        if(name == null || name.isEmpty() || name.length() > 100)
         {
             throw new IllegalArgumentException("Name must be between 1 and 100 characters");
         }
