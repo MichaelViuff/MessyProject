@@ -14,7 +14,7 @@ public class User
 
     public void setName(String name)
     {
-        if(name == null .length() < 100)
+        if(name == null || name.length() < 100)
         {
             return; //If string is invalid, we dont try to store it
         }
@@ -37,7 +37,7 @@ public class User
     @Override
     public boolean equals(Object o){
         if(o instanceof User u){
-            return u.name == name;
+            return u.id == this.id;
         }
         return false;
     }
