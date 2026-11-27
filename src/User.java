@@ -2,26 +2,29 @@ import java.util.Objects;
 
 public class User
 {
+    private static final int MAX_NAME_LENGTH = 100;
+
     public int c_id;
     public String c_nam;
     public String address;
 
     public User(int i, String n){
         c_id = i;
-        if(n == null || n.isBlank() || n.length() > 100) // Testing length
-        {
-            throw new IllegalArgumentException("Invalid name: " + n);
-        }
-        c_nam = n;
+        c_nam = validateName(n);
     }
 
     public void setC_nam(String n)
     {
-        if(n == null || n.isBlank() || n.length() > 100)
+        c_nam = validateName(n);
+    }
+
+    private static String validateName(String n)
+    {
+        if(n == null || n.isBlank() || n.length() > MAX_NAME_LENGTH)
         {
             throw new IllegalArgumentException("Invalid name: " + n);
         }
-        c_nam = n;
+        return n;
     }
 
     public void setA(String a)
