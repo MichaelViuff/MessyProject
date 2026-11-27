@@ -5,15 +5,15 @@ public class Persister
 {
     private static final String USERS_FILE_NAME = "users.txt";
 
-    public static void s(ArrayList<User> u)
+    public static void saveUsers(List<User> users)
     {
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(USERS_FILE_NAME)))
         {
-            for(int x=0;x<u.size();x++) // Create a loop
+            for(int x=0;x<users.size();x++) // Create a loop
             { // Nicely formatted block
-                bw.write(u.get(x).c_nam); // Write first thing
+                bw.write(users.get(x).getName()); // Write first thing
                 bw.write(";");
-                bw.write(String.valueOf(u.get(x).geti())); // Write second thing
+                bw.write(String.valueOf(users.get(x).getId())); // Write second thing
                 bw.newLine();
             } // Ending parenthesis
         }

@@ -2,19 +2,19 @@ import java.util.ArrayList;
 
 public class UserList
 {
-    public ArrayList<User> u = new ArrayList<User>();
+    public ArrayList<User> users = new ArrayList<User>();
 
-    public void add(User u)
+    public void add(User user)
     {
-        if(u == null)
+        if(user == null)
         {
             throw new IllegalArgumentException("User must not be null");
         }
-        this.u.add(u);
+        users.add(user);
     }
 
-    public ArrayList<User> getu()
+    public ArrayList<User> getUsers()
     {
-        return u;
+        return users;
     }
 }

@@ -4,50 +4,50 @@ public class User
 {
     private static final int MAX_NAME_LENGTH = 100;
 
-    public int c_id;
-    public String c_nam;
+    public int id;
+    public String name;
     public String address;
 
-    public User(int i, String n){
-        c_id = i;
-        c_nam = validateName(n);
+    public User(int id, String name){
+        this.id = id;
+        this.name = validateName(name);
     }
 
-    public void setC_nam(String n)
+    public void setName(String name)
     {
-        c_nam = validateName(n);
+        this.name = validateName(name);
     }
 
-    private static String validateName(String n)
+    private static String validateName(String name)
     {
-        if(n == null || n.isBlank() || n.length() > MAX_NAME_LENGTH)
+        if(name == null || name.isBlank() || name.length() > MAX_NAME_LENGTH)
         {
-            throw new IllegalArgumentException("Invalid name: " + n);
+            throw new IllegalArgumentException("Invalid name: " + name);
         }
-        return n;
+        return name;
     }
 
-    public void setA(String a)
+    public void setAddress(String address)
     {
-        address = a;
+        this.address = address;
     }
 
-    public int geti(){ return c_id; }
+    public int getId(){ return id; }
 
-    public String getn(){ return c_nam; }
+    public String getName(){ return name; }
 
-    public String geta(){ return address; }
+    public String getAddress(){ return address; }
 
     @Override
     public boolean equals(Object o){
-        if(o instanceof User u){
-            return Objects.equals(u.c_nam, c_nam);
+        if(o instanceof User other){
+            return Objects.equals(other.name, name);
         }
         return false;
     }
 
     @Override
     public int hashCode(){
-        return Objects.hash(c_nam);
+        return Objects.hash(name);
     }
 }
