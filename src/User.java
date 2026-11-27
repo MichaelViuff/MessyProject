@@ -2,57 +2,57 @@ public class User
 {
     private static final int MAX_NAME_LENGTH = 100;
 
-    public int c_id;
-    public String c_nam;
+    public int id;
+    public String name;
     public String address;
 
-    public User(int i, String n)
+    public User(int id, String name)
     {
-        c_id = i;
-        setC_nam(n);
+        this.id = id;
+        setName(name);
     }
 
-    public void setC_nam(String n)
+    public void setName(String name)
     {
-        if (n == null || n.isBlank() || n.length() > MAX_NAME_LENGTH)
+        if (name == null || name.isBlank() || name.length() > MAX_NAME_LENGTH)
         {
             throw new IllegalArgumentException("Invalid name");
         }
 
-        c_nam = n;
+        this.name = name;
     }
 
-    public void setA(String a)
+    public void setAddress(String address)
     {
-        this.address = a;
+        this.address = address;
     }
 
-    public int geti(){ return c_id; }
+    public int getId(){ return id; }
 
-    public String getn(){ return c_nam; }
+    public String getName(){ return name; }
 
-    public String geta()
+    public String getAddress()
     {
         return address;
     }
 
     @Override
-    public boolean equals(Object o)
+    public boolean equals(Object obj)
     {
-        if (o instanceof User u)
+        if (obj instanceof User user)
         {
-            return c_nam.equals(u.c_nam);
+            return name.equals(user.name);
         }
         return false;
     }
     @Override
     public int hashCode()
     {
-        return c_nam.hashCode();
+        return name.hashCode();
     }
     @Override
     public String toString()
     {
-        return "ID: " + c_id + ", Name: " + c_nam;
+        return "ID: " + id + ", Name: " + name;
     }
 }
