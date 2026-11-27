@@ -11,8 +11,8 @@ public class Persister
     {
         for (int x = 0; x < u.size(); x++)
         {
-            bw.write(u.get(x).c_nam);
-            bw.write(Integer.toString(u.get(x).geti()));
+           bw.write(u.get(x).c_nam + "," + u.get(x).geti());
+		bw.newLine();
         }
     }
 }
