@@ -1,8 +1,6 @@
-import java.io.IOException;
-
 public class Main
 {
-    public static void main(String[] args) throws IOException
+    public static void main(String[] args)
     {
         User u1 = new User(10, "Bob");
         User u2 = new User(20, "Alice");

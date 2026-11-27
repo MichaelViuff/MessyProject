@@ -3,17 +3,23 @@ import java.util.*;
 
 public class Persister
 {
-    public static void s(ArrayList<User> u) throws IOException
+    private static final String USERS_FILE_NAME = "users.txt";
+
+    public static void s(ArrayList<User> u)
     {
-        File file = new File("users.txt"); // Creates file
-        FileWriter fw = new FileWriter(file); // Create filewriter
-        BufferedWriter bw = new BufferedWriter(fw); // Create BufferedWriter
-        for(int x=0;x<u.size();x++) // Create a loop
-        { // Nicely formatted block
-            bw.write(u.get(x).c_nam); // Write first thing
-            bw.write(";");
-            bw.write(String.valueOf(u.get(x).geti())); // Write second thing
-            bw.newLine();
-        } // Ending parenthesis
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(USERS_FILE_NAME)))
+        {
+            for(int x=0;x<u.size();x++) // Create a loop
+            { // Nicely formatted block
+                bw.write(u.get(x).c_nam); // Write first thing
+                bw.write(";");
+                bw.write(String.valueOf(u.get(x).geti())); // Write second thing
+                bw.newLine();
+            } // Ending parenthesis
+        }
+        catch (IOException e)
+        {
+            System.err.println("Could not save users to " + USERS_FILE_NAME + ": " + e.getMessage());
+        }
     }
 }
