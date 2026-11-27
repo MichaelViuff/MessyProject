@@ -13,7 +13,9 @@ public class Persister
             for (int index = 0; index < users.size(); index++)
             {
                 bufferedWriter.write(users.get(index).name);
-                bufferedWriter.write(users.get(index).getId());
+                bufferedWriter.write(", ");
+                bufferedWriter.write(String.valueOf(users.get(index).getId()));
+                bufferedWriter.newLine();
             }
         }
     }
