@@ -8,7 +8,8 @@ public class User
     public String name;
     public String address;
 
-    public User(int id, String name){
+    public User(int id, String name)
+    {
         this.id = id;
         this.name = validateName(name);
     }
@@ -20,7 +21,7 @@ public class User
 
     private static String validateName(String name)
     {
-        if(name == null || name.isBlank() || name.length() > MAX_NAME_LENGTH)
+        if (name == null || name.isBlank() || name.length() > MAX_NAME_LENGTH)
         {
             throw new IllegalArgumentException("Invalid name: " + name);
         }
@@ -32,22 +33,34 @@ public class User
         this.address = address;
     }
 
-    public int getId(){ return id; }
+    public int getId()
+    {
+        return id;
+    }
 
-    public String getName(){ return name; }
+    public String getName()
+    {
+        return name;
+    }
 
-    public String getAddress(){ return address; }
+    public String getAddress()
+    {
+        return address;
+    }
 
     @Override
-    public boolean equals(Object o){
-        if(o instanceof User other){
+    public boolean equals(Object o)
+    {
+        if (o instanceof User other)
+        {
             return Objects.equals(other.name, name);
         }
         return false;
     }
 
     @Override
-    public int hashCode(){
+    public int hashCode()
+    {
         return Objects.hash(name);
     }
 }
