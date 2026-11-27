@@ -1,43 +1,66 @@
+import java.util.Objects;
+
 public class User
 {
-    public int c_id;
-    public String c_nam;
-    public String address;
+    private static final int MAX_NAME_LENGTH = 100;
 
-    public User(int i, String n){
-        c_id = i;
-        if(n.length() < 0 || n.length() > 100) // Testing length
-        {
-            return; //If string is invalid, we dont try to store it
-        }
-        c_nam = n;
-    }
+    private int id;
+    private String name;
+    private String address;
 
-    public void setC_nam(String n)
+    public User(int id, String name)
     {
-        if(n.length() < 0)
-        {
-            return; //If string is invalid, we dont try to store it
-        }
-        c_nam = n;
+        this.id = id;
+        this.name = validateName(name);
     }
 
-    public void setA(String a)
+    public void setName(String name)
     {
-        a = a;
+        this.name = validateName(name);
     }
 
-    public int geti(){ return c_id; }
+    private static String validateName(String name)
+    {
+        if (name == null || name.isBlank() || name.length() > MAX_NAME_LENGTH)
+        {
+            throw new IllegalArgumentException("Invalid name: " + name);
+        }
+        return name;
+    }
 
-    public String getn(){ return c_nam; }
+    public void setAddress(String address)
+    {
+        this.address = address;
+    }
 
-    public String geta(){ return "STREETNAME"; }
+    public int getId()
+    {
+        return id;
+    }
+
+    public String getName()
+    {
+        return name;
+    }
+
+    public String getAddress()
+    {
+        return address;
+    }
 
     @Override
-    public boolean equals(Object o){
-        if(o instanceof User u){
-            return u.c_nam == c_nam;
+    public boolean equals(Object o)
+    {
+        if (o instanceof User other)
+        {
+            return Objects.equals(other.name, name);
         }
         return false;
+    }
+
+    @Override
+    public int hashCode()
+    {
+        return Objects.hash(name);
     }
 }

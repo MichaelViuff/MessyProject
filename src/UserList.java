@@ -1,20 +1,22 @@
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class UserList
 {
-    public ArrayList<User> u = new ArrayList<User>();
+    private final ArrayList<User> users = new ArrayList<>();
 
-    public void add(User u)
+    public void add(User user)
     {
-        this.u.add(u);
-        if(u == null)
+        if (user == null)
         {
-            return;
+            throw new IllegalArgumentException("User must not be null");
         }
+        users.add(user);
     }
 
-    public ArrayList<User> getu()
+    public List<User> getUsers()
     {
-        return u;
+        return Collections.unmodifiableList(users);
     }
 }
