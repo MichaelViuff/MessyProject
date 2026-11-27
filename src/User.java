@@ -1,5 +1,7 @@
 public class User
 {
+    private static final int MAX_NAME_LENGTH = 100;
+
     private final int id;
     private String name;
     private String address;
@@ -7,18 +9,15 @@ public class User
     public User(int id, String name)
     {
         this.id = id;
-        if (name.length() < 0 || name.length() > 100)
-        {
-            return;
-        }
-        this.name = name;
+        setName(name);
     }
 
     public void setName(String name)
     {
-        if (name.length() < 0)
+        if (name == null || name.length() > MAX_NAME_LENGTH)
         {
-            return;
+            throw new IllegalArgumentException("Name must contain between 0 and "
+                    + MAX_NAME_LENGTH + " characters.");
         }
         this.name = name;
     }
