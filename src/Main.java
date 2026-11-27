@@ -21,7 +21,7 @@ public class Main
 
         try
         {
-            Persister.s(userList.getu());
+            Persister.s(userList.getUsers());
         }
         catch (IOException exception)
         {
