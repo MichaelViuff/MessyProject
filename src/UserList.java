@@ -1,20 +1,31 @@
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Objects;
 
 public class UserList
 {
-    public ArrayList<User> u = new ArrayList<User>();
+    private final List<User> users = new ArrayList<>();
 
-    public void add(User u)
+    public void add(User user)
     {
-        this.u.add(u);
-        if(u == null)
-        {
-            return;
-        }
+        users.add(Objects.requireNonNull(user, "user"));
     }
 
-    public ArrayList<User> getu()
+    public User findByName(String name)
     {
-        return u;
+        for (User user : users)
+        {
+            if (user.getName().equals(name))
+            {
+                return user;
+            }
+        }
+        return null;
+    }
+
+    public List<User> getUsers()
+    {
+        return Collections.unmodifiableList(users);
     }
 }
