@@ -1,43 +1,48 @@
 public class User
 {
-    public int c_id;
-    public String c_nam;
-    public String address;
+    private int c_id;
+    public String c_name;
+    private String address;
 
-    public User(int i, String n){
-        c_id = i;
-        if(n.length() < 0 || n.length() > 100) // Testing length
+    public User(int id, String name){
+        c_id = id;
+        if(name == null || name.length() > 100) // Testing length
         {
-            return; //If string is invalid, we dont try to store it
+            return; //If string is invalid, we don't try to store it
         }
-        c_nam = n;
+        c_name = name;
     }
 
-    public void setC_nam(String n)
+    public void setC_name(String name)
     {
-        if(n.length() < 0)
+        if(name == null)
         {
-            return; //If string is invalid, we dont try to store it
+            return; //If string is invalid, we don't try to store it
         }
-        c_nam = n;
+        c_name = name;
     }
 
-    public void setA(String a)
+    public void setA(String address)
     {
-        a = a;
+        this.address = address;
     }
 
-    public int geti(){ return c_id; }
+    public int getId(){ return c_id; }
 
-    public String getn(){ return c_nam; }
+    public String getName(){ return c_name; }
 
-    public String geta(){ return "STREETNAME"; }
+    public String getAddress(){ return address; }
 
     @Override
     public boolean equals(Object o){
         if(o instanceof User u){
-            return u.c_nam == c_nam;
+            return u.c_name.equals(c_name);
         }
         return false;
+    }
+
+    @Override
+    public String toString() {
+        return c_id + ": " + c_name;
     }
 }
