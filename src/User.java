@@ -40,10 +40,17 @@ public class User
     }
 
     @Override
-    public boolean equals(Object o){
-        if(o instanceof User u){
-            return u.c_nam == c_nam;
+    public boolean equals(Object o)
+    {
+        if (o instanceof User u)
+        {
+            return c_nam.equals(u.c_nam);
         }
         return false;
+    }
+    @Override
+    public int hashCode()
+    {
+        return c_nam.hashCode();
     }
 }
