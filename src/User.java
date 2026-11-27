@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class User
 {
     private static final int MAX_NAME_LENGTH = 100;
@@ -45,10 +47,20 @@ public class User
     @Override
     public boolean equals(Object other)
     {
-        if (other instanceof User user)
+        if (this == other)
         {
-            return user.name == name;
+            return true;
         }
-        return false;
+        if (!(other instanceof User user))
+        {
+            return false;
+        }
+        return Objects.equals(name, user.name);
+    }
+
+    @Override
+    public int hashCode()
+    {
+        return Objects.hash(name);
     }
 }
