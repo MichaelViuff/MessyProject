@@ -1,17 +1,28 @@
-import java.io.*;
-import java.util.*;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.List;
+import java.util.Objects;
 
 public class Persister
 {
-    public static void s(List<User> u) throws IOException
+    public static void saveUsers(List<User> users, Path filePath) throws IOException
     {
-        File file = new File("users.txt"); // Creates file
-        FileWriter fw = new FileWriter(file); // Create filewriter
-        BufferedWriter bw = new BufferedWriter(fw); // Create BufferedWriter
-        for(int x=0;x<u.size()-1;x++) // Create a loop
-        { // Nicely formatted block
-            bw.write(u.get(x).getName()); // Write first thing
-            bw.write(u.get(x).getId()); // Write second thing
-        } // Ending parenthesis
+        Objects.requireNonNull(users, "users");
+        Objects.requireNonNull(filePath, "filePath");
+
+        try (BufferedWriter writer = Files.newBufferedWriter(filePath, StandardCharsets.UTF_8))
+        {
+            for (User user : users)
+            {
+                Objects.requireNonNull(user, "users must not contain null");
+                writer.write(user.getName());
+                writer.write('\t');
+                writer.write(Integer.toString(user.getId()));
+                writer.newLine();
+            }
+        }
     }
 }

@@ -1,7 +1,11 @@
 import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 public class Main
 {
+    private static final String DEFAULT_OUTPUT_PATH = "users.txt";
+
     public static void main(String[] args)
     {
         User user1 = new User(10, "Bob");
@@ -19,13 +23,14 @@ public class Main
             System.out.println(bob.getName());
         }
 
+        Path outputPath = Paths.get(DEFAULT_OUTPUT_PATH);
         try
         {
-            Persister.s(userList.getUsers());
+            Persister.saveUsers(userList.getUsers(), outputPath);
         }
         catch (IOException exception)
         {
-            System.err.println("Could not save users to users.txt: " + exception.getMessage());
+            System.err.println("Could not save users to " + outputPath + ": " + exception.getMessage());
             System.exit(1);
         }
     }
