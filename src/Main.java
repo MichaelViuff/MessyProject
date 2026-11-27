@@ -1,18 +1,33 @@
+import java.io.IOException;
+
 public class Main
 {
     public static void main(String[] args)
     {
-        User u1 = new User("Bob", 10);
-        User u2 = new User("Alice", 20);
-        User u3 = new User("Carl", 30);
+        User user1 = new User(10, "Bob");
+        User user2 = new User(20, "Alice");
+        User user3 = new User(30, "Carl");
 
-        UserList list = new UserList();
-        list.add(u1);
-        list.add(u2);
-        list.add(u3);
+        UserList userList = new UserList();
+        userList.add(user1);
+        userList.add(user2);
+        userList.add(user3);
 
-        System.out.println(list.getu(new User("Bob", 11)));
+        User bob = userList.findByName("Bob");
+        if (bob != null)
+        {
+            System.out.println(bob.getn());
+        }
 
-        Persister.s(list);
+        try
+        {
+            Persister.s(userList.getu());
+        }
+        catch (IOException exception)
+        {
+            System.err.println("Could not save users to users.txt: "
+                    + exception.getMessage());
+            System.exit(1);
+        }
     }
 }

@@ -12,7 +12,17 @@ public class UserList
             return;
         }
     }
-
+    public User findByName(String name)
+    {
+        for (User user : u)
+        {
+            if (java.util.Objects.equals(user.getn(), name))
+            {
+                return user;
+            }
+        }
+        return null;
+    }
     public ArrayList<User> getu()
     {
         return u;
