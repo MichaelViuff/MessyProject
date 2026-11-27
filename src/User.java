@@ -4,21 +4,24 @@ public class User
     public String c_nam;
     public String address;
 
-    public User(int i, String n){
-        c_id = i;
-        if(n.length() < 0 || n.length() > 100) // Testing length
+    public User(int i, String n)
+    {
+        if (n == null || n.isBlank() || n.length() > 100)
         {
-            return; //If string is invalid, we dont try to store it
+            throw new IllegalArgumentException("Invalid name");
         }
+
+        c_id = i;
         c_nam = n;
     }
 
     public void setC_nam(String n)
     {
-        if(n.length() < 0)
+        if (n == null || n.isBlank() || n.length() > 100)
         {
-            return; //If string is invalid, we dont try to store it
+            throw new IllegalArgumentException("Invalid name");
         }
+
         c_nam = n;
     }
 
