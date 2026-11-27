@@ -16,7 +16,7 @@ public class Main
         User bob = userList.findByName("Bob");
         if (bob != null)
         {
-            System.out.println(bob.getn());
+            System.out.println(bob.getName());
         }
 
         try
@@ -25,8 +25,7 @@ public class Main
         }
         catch (IOException exception)
         {
-            System.err.println("Could not save users to users.txt: "
-                    + exception.getMessage());
+            System.err.println("Could not save users to users.txt: " + exception.getMessage());
             System.exit(1);
         }
     }

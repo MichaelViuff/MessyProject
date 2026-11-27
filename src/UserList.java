@@ -12,17 +12,19 @@ public class UserList
             return;
         }
     }
+
     public User findByName(String name)
     {
         for (User user : u)
         {
-            if (java.util.Objects.equals(user.getn(), name))
+            if (java.util.Objects.equals(user.getName(), name))
             {
                 return user;
             }
         }
         return null;
     }
+
     public ArrayList<User> getu()
     {
         return u;
