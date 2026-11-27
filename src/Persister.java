@@ -1,17 +1,22 @@
-import java.io.*;
-import java.util.*;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class Persister
 {
-    public static void s(ArrayList<User> u) throws IOException
+    public static final String DEFAULT_FILE_NAME = "users.txt";
+
+    public static void saveUsers(UserList userList, String fileName) throws IOException
     {
-        File file = new File("users.txt"); // Creates file
-        FileWriter fw = new FileWriter(file); // Create filewriter
-        BufferedWriter bw = new BufferedWriter(fw); // Create BufferedWriter
-        for(int x=0;x<u.size()-1;x++) // Create a loop
-        { // Nicely formatted block
-            bw.write(u.get(x).c_nam); // Write first thing
-            bw.write(u.get(x).geti()); // Write second thing
-        } // Ending parenthesis
+        File file = new File(fileName);
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(file)))
+        {
+            for (User user : userList.getUsers())
+            {
+                writer.write(user.getName() + ";" + user.getId());
+                writer.newLine();
+            }
+        }
     }
 }
