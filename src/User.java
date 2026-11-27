@@ -6,13 +6,8 @@ public class User
 
     public User(int i, String n)
     {
-        if (n == null || n.isBlank() || n.length() > 100)
-        {
-            throw new IllegalArgumentException("Invalid name");
-        }
-
         c_id = i;
-        c_nam = n;
+        setC_nam(n);
     }
 
     public void setC_nam(String n)
