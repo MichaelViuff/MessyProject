@@ -6,37 +6,38 @@ public class User
 
     public User(int i, String n){
         c_id = i;
-        if(n.length() < 0 || n.length() > 100) // Testing length
-        {
-            return; //If string is invalid, we dont try to store it
-        }
-        c_nam = n;
+setC_nam(n);
+
     }
 
-    public void setC_nam(String n)
+public void setC_nam(String n)
+{
+    if (n == null || n.isEmpty() || n.length() > 100)
     {
-        if(n.length() < 0)
-        {
-            return; //If string is invalid, we dont try to store it
-        }
-        c_nam = n;
+        throw new IllegalArgumentException("Name must be between 1 and 100 characters.");
     }
 
-    public void setA(String a)
-    {
-        a = a;
-    }
+    c_nam = n;
+}
+public void setA(String a)
+{
+    this.address = a;
+}
+
 
     public int geti(){ return c_id; }
 
     public String getn(){ return c_nam; }
 
-    public String geta(){ return "STREETNAME"; }
+   public String getA()
+{
+    return address;
+}
 
     @Override
     public boolean equals(Object o){
         if(o instanceof User u){
-            return u.c_nam == c_nam;
+            return c_nam != null && c_nam.equals(u.c_nam);
         }
         return false;
     }
